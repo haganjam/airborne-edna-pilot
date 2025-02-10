@@ -1,0 +1,120 @@
+---
+title: "Data-simulation"
+format: html
+format: 
+  html:
+    embed-resources: true
+html-math-method: 
+  method: katex
+editor: source
+---
+
+## ddPCR
+
+This data simulation relates to the post-processed data that we will obtain from the ddPCR where, from each sample, we obtain a yes-no answer about whether the two target species are present or not (Round Goby: *Neogobius melanostomus*, Sea Walnut: *Mnemiopsis leidyii*).
+
+For both the ddPCR and the metabarcoding, we will take seven water and seven air samples (over 7 days) at three locations and at two time-points during the year:
+
+```{r}
+# set-up the fixed parameters
+
+# number of sample days
+n_days <- 7
+
+# number of seasons
+n_seas <- 2
+
+# number of sites
+n_sites <- 3
+```
+
+### N. melanostomus
+
+#### Description of the hypothesised data-generating process
+
+We will model the non-detection (0) or detection (1) of *N. melanostomus* ($N_{i}$) as a Bernoulli process where the probability of detection ($p_i$) can vary with site ($s_i$) and time point ($t_i$). To simulate this, we set the intercept we set the intercept ($\alpha$) as the average probability of detection ($p_i$) of *N. melanostomus* at the lowest salinity site (Gothenburg harbour) in the winter-spring. In addition, we specify two dummy variables: $s^1_i$ which is one if $s_i$ is Saltholmen (the medium salinity site) and $s^2_i$ which is one if $s_i$ is Vrango (the high salinity site). We set-up two coefficients ($\beta_1$ and $\beta_2$ respectively) for these dummy variables which represent the change in the average probability of detection by moving from the Gothenburg harbour to Saltholmen and from the Gothenburg harbour to Vrango respectively. Finally, we specify the effect of season or time point ($t_i$) as the change from winter to summer with a $\beta_3$ coefficient. This model can be written as follows:
+
+$$
+N_{i} \sim Bernoulli(p_{i})
+$$
+$$
+logit(p_{i}) = \alpha + \beta_1(s^1_i) + \beta_2(s^2_i) + \beta_3(t_i)
+$$
+
+#### Specify model parameters
+
+For *N. melanostomus*, we expect that it will be most abundant and, therefore, easier to detect at the least saline site at the Gothenburg harbour and least abundant and, therefore, more difficult to detect in the saline Vrango site. Moreover, because the species is present all year round, we expect that detection will not vary seasonally. Therefore, we will specify the parameter values as follows.
+
+$\alpha$
+
+The alpha parameter represents the average probability of detection ($p_i$) of *N. melanostomus* at the lowest salinity site (Gothenburg harbour) in the winter-spring. Therefore, we expect this probability to be high, let's say 0.80. On the logit-scale ($log(\frac{0.80}{1 - 0.80})$), this is 1.4.
+
+```{r}
+# set the alpha parameter
+alpha <- 1.4
+```
+
+$\beta_1$ and $\beta_2$
+
+We want the the average probability of detection ($p_i$) to drop by 20% as we go from the Gothenburg harbour to Saltholmen and then another 20% to Vrango (i.e. 40% total). Therefore, on the logit-scale, $\beta_1$ needs to correspond to the difference between ($log(\frac{0.80}{1 - 0.80})$) and ($log(\frac{0.60}{1 - 0.60})$) which is approximately -1. By the same logic, $\beta_2$ is -0.8.
+
+```{r}
+# set the beta1 and beta2 parameter values
+beta1 <- -1
+beta2 <- -1.8
+```
+
+$\beta_3$
+
+Because *N. melanostomus* is present all year round, we do not expect any effect of season ($t_i$) on the average average probability of detection ($p_i$). Therefore, we set $\beta_3$ at 0.
+
+```{r}
+# set the beta3 parameter value
+beta3 <- 0
+```
+
+#### Simulate the data
+
+With our hypothesised data-generating model and our specified parameter values, we can simulate the data as follows:
+
+```{r}
+# set-up a grid covering the sampling design
+samp_grid <- expand.grid(day = seq_len(n_days),
+                         site = seq_len(n_sites),
+                         season = seq_len(n_seas))
+
+# set-up the dummy variables for site
+samp_grid$site_12 <- with(samp_grid, ifelse(site == c(2), 1, 0))
+samp_grid$site_13 <- with(samp_grid, ifelse(site == c(3), 1, 0))
+
+# convert season to a 0-1 dummy
+samp_grid$season <- with(samp_grid, ifelse(season == 1, 0, 1))
+
+# simulate the probability of detection on the logit-scale
+p_logit <- with(samp_grid,
+                alpha + (beta1 * site_12) + (beta2 * site_13) + (beta3 * season))
+
+# convert the probability of detection on the logit-scale to the natural-scale
+p <- exp(p_logit)/(1+exp(p_logit))
+
+# simulate the response variable N from the probability of detection
+N <- rbinom(n = length(p), size = 1, prob = p)
+
+# add to the data.frame
+samp_grid$p <- p
+samp_grid$N <- N
+```
+
+#### Test the model
+
+Now that we have our simulated data, let's see if we can reproduce the simulated parameter values.
+
+```{r}
+# fit a logistic regression with 
+lm1 <- glm(N ~ site + season, family = "binomial", data = dplyr::mutate(samp_grid, site = as.factor(site)))
+summary(lm1)
+```
+
+
+
+
