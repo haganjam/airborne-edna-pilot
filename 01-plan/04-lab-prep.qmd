@@ -1,0 +1,19 @@
+---
+title: "04-lab-prep"
+format: html
+editor: source
+---
+
+## Buffer preparation
+
+Each airborne eDNA filter needs to be preserved using buffer ATL. Therefore, we prepared tubes of X ml buffer ATL for each sample in syringes so that, after extracting the filter from the air-sampler, we could easily add the buffer ATL.
+
+### Bench preparation
+
+All decantations were done under a laminar flow hood. The laminar flow hood was cleaned using the following procedure:
+
+1.  2 hours under UV light
+2.  Wiped down with 0.5% bleach solution (1:10 v:v dilution of household bleach to water) and left for 10 minutes
+3.  After 10 minutes, the surfaces were again wiped down with milli-Q water
+4.  The surfaces were finally wiped down with 70% ethanol to help drying
+5.  2 hours under UV light again
