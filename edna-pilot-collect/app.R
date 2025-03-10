@@ -9,10 +9,8 @@ library(googlesheets4)
 # authenticate myself
 
 # set-up a google sheet to store the data from the form
-# googlesheets4::gs4_create(name = "fieldwork-collection-data", 
-# Create a sheet called main for all data to 
-# go to the same place
-# sheets = "main")
+# googlesheets4::gs4_create(name = "fieldwork-collection-data", sheets = "main")
+# move the created data.frame to the correct folder
 # googledrive::drive_mv("fieldwork-collection-data", path = "~/edna-pilot-sweden/")
 
 # set gargle options
