@@ -45,6 +45,9 @@ docs/
 # translation temp files
 po/*~
 
+# photos
+02-data-collection/01-field-sampling/photos/
+
 # RStudio Connect folder
 rsconnect/
 

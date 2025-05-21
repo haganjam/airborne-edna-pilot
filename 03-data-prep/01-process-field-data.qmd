@@ -1,0 +1,100 @@
+---
+title: "Process-fieldwork-data"
+format: html
+editor: visual
+---
+
+We start by loading the data collected in the field from the Google Sheet. These data were all collected via the fieldwork app (`edna-pilot-collect`).
+
+```{r}
+# load the field data from Google Drive
+field_data <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1fJuy4kHUN6CYKzhboMhRq4J_STO3BhGRMCNWwQ5jtkc/edit?usp=sharing")
+head(field_data)
+```
+
+First, we assign a `subject-id` to each data-point that was collected:
+
+```{r}
+# assign a sample-id
+field_data$subject_id <- rep(1:(nrow(field_data)/19), each = 19)
+```
+
+Next, we pivot the data-set into the wide-format so that there is one row per data-point defined by the `subject_id` variable:
+
+```{r}
+# pivot to a wider format
+field_data <-
+  field_data |>
+  tidyr::pivot_wider(id_cols = "subject_id",
+                     names_from = "question_id",
+                     values_from = "response")
+head(field_data)
+```
+
+The inland control site was originally planned to be (*Natrium* building)[https://www.gu.se/en/study-gothenburg/natrium-a-new-building-on-medicinareberget]. Therefore, this was built as an option into the fieldwork app. However, given the distances required to travel in a given day, this was not practical and, as a result, we switched to a different inland control site in the *Grimmered* commune in Gothenburg (Ruddalsvägen 5, 426 68 Västra Frölunda, Sweden). Therefore, we recode *Natrium* to *Grimmered*:
+
+```{r}
+# recode natrium to grimmered
+field_data$site <- ifelse(field_data$site == "natrium", "grimmered", field_data$site)
+```
+
+Next, we add a variable which is the site-label (i.e. a code to refer to the different sites):
+
+```{r}
+# relabel the site value
+field_data <-
+  field_data |>
+  dplyr::mutate(site_label = dplyr::case_when(
+    site == "vrango" ~ "vr",
+    site == "saltholmen" ~ "st",
+    site == "nya varvet" ~ "nv",
+    site == "grimmered" ~ "gr"
+  ))
+```
+
+The `filter_control` variable is not very intuitively coded in the fieldwork app. Therefore, we recode to make it more clear what a sample is and what a control (i.e. a blank is):
+
+```{r}
+# relabel the filter_control variable
+field_data <-
+  field_data |>
+  dplyr::mutate(filter_control = dplyr::case_when(
+    filter_control == "no" ~ "sample",
+    filter_control == "yes"  ~ "control"
+  ))
+```
+
+Some samples were logged to test the fieldwork app. These were coded as `test == "yes"`. Therefore, we remove these samples:
+
+```{r}
+# remove the test samples
+field_data <-
+  field_data |>
+  dplyr::filter(test != "yes")
+```
+
+Given that we have done these initial data-processing, we then create a sample-level identifier variable: `unique_id`.
+
+```{r}
+# create a unique sample variable
+field_data$unique_id <-
+  with(field_data,
+       paste(segment, date, site_label, sample_number, filter_control, sep = "_"))
+```
+
+Next, we reorganise the variables in the data.frame:
+
+```{r}
+# reorder the variables in the data.frame
+field_data <-
+  field_data |>
+  dplyr::select(subject_id, unique_id, season, test, segment,
+                site, site_label, date, filter_control, sample_number, time, lat, lon,
+                weather, person, depth, volume, physical, other)
+head(field_data)
+```
+
+
+
+
+

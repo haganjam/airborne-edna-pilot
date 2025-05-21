@@ -1,0 +1,256 @@
+---
+title: "Field-notebook (May 13-19, 2025)"
+format: html
+editor: source
+---
+
+This notebook consists of a collection of notes that I (James Hagan) took during the field sampling. The field sampling took place at four sites:
+
+1. Nya Varvet (Lat: 57.6862350, Lon: 11.8854508)
+
+At the Nya Varvet site, the air-sampler was attached to the hand-rails on a jetty which directly borders the Göta älv.
+
+::: {#fig-nya-varvet layout-nrow=3}
+
+![GoogleEarth](photos/nya-varvet-google-earth.jpg)
+
+![Photo-1](photos/nya-varvet-1.jpg)
+
+![Photo-2](photos/nya-varvet-2.jpg)
+
+![Photo-3](photos/nya-varvet-3.jpg)
+
+![Photo-4](photos/nya-varvet-4.jpeg)
+
+Photos of the Nya Varvet site and deployed air-sampler.
+:::
+
+2. Saltholmen (Lat: 57.6594212, Lon: 11.8372307)
+
+The air-sampler was attached to a wooden wall that directly borders the Kattegat near Gothenburg.
+
+::: {#fig-saltholmen layout-nrow=5}
+
+![GoogleEarth](photos/saltholmen-google-earth.jpg)
+
+![Photo-1](photos/saltholmen-1.jpg)
+
+![Photo-2](photos/saltholmen-2.jpg)
+
+![Photo-3](photos/saltholmen-3.jpg)
+
+![Photo-4](photos/saltholmen-4.jpg)
+
+![Photo-5](photos/saltholmen-5.jpg)
+
+![Photo-6](photos/saltholmen-6.jpg)
+
+![Photo-7](photos/saltholmen-7.jpg)
+
+![Photo-8](photos/saltholmen-8.jpeg)
+
+Photos of the Saltholmen site and deployed air-sampler.
+:::
+
+3. Vrango (Lat: 57.5742915, Lon: 11.7758066)
+
+At Vrango, the air-sampler was attached to a lamp-post in a harbour within the Kattegat.
+
+::: {#fig-vrango layout-nrow=1}
+
+![GoogleEarth](photos/vrango-google-earth.jpg)
+
+![Photo-1](photos/vrango-1.jpeg)
+
+Photos of the Vrango site and deployed air-sampler. The air-sampler was attached to a lamp-post on the boulders in front of the wooden-dock shown in the GoogleEarth image.
+:::
+
+
+4. Inland control site (Lat: 57.6695114, Lon: 11.9047494, address: Ruddalsvägen 5, 426 68 Västra Frölunda, Sweden)
+
+We also set-up an inland control site that was not directly next to a water body.
+
+::: {#fig-ruddalsvagen layout-nrow=1}
+
+![GoogleEarth](photos/ruddalsvagen-inland-control-google-earth.jpg)
+
+![Photo-1](photos/ruddalsvagen-inland-control-1.jpeg)
+
+Photos of the inland control site and deployed air-sampler, which was placed at Ruddalsvagen street.
+:::
+
+## 2025-05-13
+
+When were the first filters placed?
+
+### Nya varvet
+
+09h09: Filter was placed.
+Sunny, mild onshore wind.
+Fluffy side was accidentally facing inwards. 
+
+### Saltholmen
+
+10h58: Filter was placed.
+Sunny, mild onshore wind.
+
+### Vrångo
+
+12h49: Filter was placed.
+Sunny, medium onshore wind.
+Fluffy side was accidentally facing inwards. 
+
+## 2025-05-14
+
+### Nya varvet
+
+**Water samples:** blank and real sample which went smoothly. For the blank, we did not get rid of the moisture in the sterivex completely before adding the buffer. Blank was done with bottled water. 
+
+**Air sample:** For this sample, we had to remove the ring and cut out the filter on the ground because it cannot be approached from the front. We had problems adding the buffer because it immediately started foaming. 
+
+**Additional notes:** Fluffy side of filter placed the day before was facing inwards. The air sampler was running while we were doing the water sampling. However, we were always behind the the air inlet. 
+
+### Saltholmen
+
+**Water sample:** Everything went smoothly. The only issue was that the 100 ml syringe was accidentally placed in the field bag shortly before using it to push water out of sterivex. This could, theoretically, create contamination.
+
+**Air sample:** Smooth except for foaming buffer. 
+
+### Vrångo
+
+**Water sample:** Everything went smoothly.
+
+**Air sample:** This time, we tried to let the buffer slowly seep into the filter before pushing out the air but foam immediately shot out.
+
+### Inland site
+
+**Air sample:** All smooth and placed at 18:19 i.e. filter was placed and the air sampler was turned on. 
+
+## 2025-05-15
+
+A general note about how we placed the power-banks to distinguish between charged and not-charged power-banks. Charged power-banks are in front of backpack. Empty ones go in the back. From the air samples taken today, we started with the new preservation method where the filters are pushed to the top of the 10 ml syringe before the buffer is added. 
+
+### Nya varvet
+
+**Water sample:** 600 ml filtered and this was not entered into the data so that needs to be corrected. Sample was taken from rocks opposite jetty as I did not bring a rope. It is a few metres away and the same water body. 
+
+**Air sample:** Used new method for preserving filter whereby the filter is pulled to the front using tweezers before adding the buffer. Dropped the 10 ml syringe plunger on the ground but thoroughly washed with 10% bleach and Milli-Q.
+
+### Saltholmen
+
+**Water samples:** Took a blank with bottled water and a normal water sample. 
+
+**Air sample:** Dropped the 10 ml syringe on the ground but thoroughly washed with 10% bleach and Milli-Q. Used the new preservation method.
+
+### Vrångo
+
+**Water sample:** Forgot to keep the syringe to push air out the sterivex. Therefore, I used a sterile 3 ml syringe that was storing ATL buffer. Easy to filter 1 l.
+
+**Air sample:** New preservation method worked well again. Dropped the washer that holds the filter but made sure to thoroughly bleach and Milli-Q it before putting the new filter in.
+
+The wind meant it was difficult to not stand in front of the filter when collecting and changing it which was not ideal given the strong onshore wind. 
+
+## 2025-05-16
+
+### Nya varvet
+
+**Water sample:** Took sample with rope from small bridge across from the air sampler. Filtered 600 ml again. 
+
+**Air sample:** This went smoothly but, like the other air samples here, we removed the filter housing and then cut out the filter on the plastic box lid as it is impossible to cut out the filter in situ. This was the first sample that we used a needle to push the filter back up to the top. This worked. Like the scissors, between samples, the needle was put in a small plastic container with bleach. Therefore, these tools soaked in bleach for at least 30 mins and were then rinsed thoroughly with Milli-Q before being used on the next sample. 
+
+### Inland site
+
+**Air sample:** Lena will collect this one later. I prepped everything for her at the lab and made sure everything was sterile. It was left for more than 24 hours so the DNA degradation may be higher. Lena also had some problems preserving the filter so she added a bit more buffer but it seemed to work out fine in the end. 
+
+### Saltholmen:
+
+**Water sample:** filtered a full litre. Rope is a possible source of contamination with nya varvet because it gets wet. I have removed the rope now and, in future, will only use rope at Nya varvet. 
+
+**Air sample:** Bird poo on top of the back of the sampler. This fan sounds slightly different to the others. 
+
+### Vrångo:
+
+**Water sample:** blank sample taken with normal sample. Both 1 l. Switched gloves after taking water sample (before getting sterivex etc.) which is probably something to do in general. From this sample, this was done consistently.
+
+**Air sample:** Plunger came loose from sterile bag but I don't think there was contact with any surface (i.e. the bag was a bit broken but it was dropped or anything).
+
+## 2025-05-17
+
+Here we switched up the order of the visits to the sites. We first went to Vrångo, then Saltholmen and then Nya varvet.
+
+### Vrångo
+
+**Water sample:** Little american boy helped us to squeeze out the water but he wore gloves and I made sure he did not touch anything while this was ongoing. 
+
+In addition, we saw some comb jellies in the water. However, Lena Granhag (a comb-jelly expert) thought they were the native comb jelly: *Bolinopsis infudibulem*. She took some measurements which is the total length of the jellyfish versus gut length along with the lobe placement. Lena was quite convinced it was *Bolinopsis*. 
+
+**Air sample:** No real drama. Continued using the new preservation method. 
+
+### Saltholmen
+
+**Water sample:** Lena took the sample and started doing the filtering. However, I did most of the filtering and sample preservation. Lena noticed a comb jellyfish but could not catch it to confirm its identity.
+
+**Air sample:** Lena noticed a comb jelly, otherwise I did all sampling. 
+
+### Nya varvet
+
+**Water sample:** 600 ml was filtered.
+
+**Air sample:** The fan was not running upon arrival. Probably just over 24 hours so it makes sense that the battery would have died. Dropped 10 ml plunger but bleached and Milli-Q-ed it. Some extra outer filter was included because I was using the tweezer when cutting it and I left a small edge. 
+
+### Inland site
+
+**Air sample:** Fan was barely running so there could be something with the fan that needs changing. It could also be that the power-bank was not properly charged but this seems unlikely.
+
+## 2025-05-18
+
+Here the order was changed as well as we visited Saltholmen first. 
+
+### Saltholmen
+
+**Water sample:** Everything went smoothly, 1 l was filtered. No comb jellies were observed but I did not look very hard.
+
+**Air sample:** Lots of wind and it was offshore i.e. from the back to the front of the air sampler. The sucking of the air maybe counteracts this but it still might cause contamination? Something to consider maybe?
+
+### Vrångö
+
+**Water sample:** There were quite a few moon jellies and comb jellies. To me, they looked like *Bolinopsis* but I did not take detailed measurements. However, given that we confirmed it was *Bolinopsis* yesterday, it seems likely. As usual at this site, we took...
+
+**Air sample:** When I replaced this filter, a little bit of fluff was sticking out. However, it didn't seem like a big problem and I thought it would be better to leave it than fiddle. 
+
+### Nya varvet
+
+**Water sample:** 600 ml was filtered and the sample was taken around 17h00.
+
+**Air sample:** Sample was taken around 17h00.
+
+### Additional lab-work
+
+**Laboratory preparation:** I prepped 3 ml syringes with ATL buffer for the summer samples for Saltholmen and the inland sites in the PCR laminar flow workstation. This could mean that there is some contamination but the station was clean and the UV light has been running regularly for the last three days without any PCR being done in there. This was the best option as the lab is also an aquarium.
+
+**Air-sample blanks:** For these blanks which were carried around in the field, we preserved them outside the laboratory using the same methods. Three different buffers were used:
+
+1. Original buffer (i.e. prepped in Brussels). For this blank, some marker was on the filter and ran blue when ATL buffer was added.
+
+2. GMBL PCR hood buffer. Some marker ran as well. 
+
+3. GMBL new buffer in plastic bag i.e. buffer was new and the buffer was prepped in a plastic bag to avoid contamination. Some marker ran as well. 
+
+We did these blanks with the different buffer preparation methods to make sure that we get the same results and that the buffer preparations did not cause some contamination.
+
+## 2025-05-19
+
+All the air samples that were collected today (i.e. samples number 006) were preserved with 3 ml syringes of ATL buffer that were prepared under a PCR laminar flow. The UV light had been run regularly over a three day period and no PCR had taken place during that time.
+
+### Nya varvet
+
+**Air sample:** Fan was off when I arrived. This is strange because this sampler was placed quite late the previous day. But, it does seem like the battery died so maybe it wasn't fully charged? Forgot to take photos of the site with the sampler attached to the wall. However, I took photos afterwards.
+
+### Vrångö
+
+**Air sample:** Fan was running fine. Dropped 10 ml syringe but it was still sealed. 
+
+### Saltholmen
+
+**Air sample:** Fan was not running on arrival. Could be just battery as this was around 24 hours.
+
