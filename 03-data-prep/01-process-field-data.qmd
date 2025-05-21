@@ -135,6 +135,10 @@ Create flags to identify potentially problematic observations. For example:
 1. Fan was not running
 2. Dropped plungers
 3. Foamy buffer
+4. Preservation method
+5. Field sampling changes
+
+
 
 
 
