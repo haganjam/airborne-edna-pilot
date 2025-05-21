@@ -1,10 +1,12 @@
 ---
 title: "Process-fieldwork-data"
 format: html
-editor: visual
+editor: source
 ---
 
 We start by loading the data collected in the field from the Google Sheet. These data were all collected via the fieldwork app (`edna-pilot-collect`).
+
+## Basic data preparation
 
 ```{r}
 # load the field data from Google Drive
@@ -31,7 +33,7 @@ field_data <-
 head(field_data)
 ```
 
-The inland control site was originally planned to be (*Natrium* building)[https://www.gu.se/en/study-gothenburg/natrium-a-new-building-on-medicinareberget]. Therefore, this was built as an option into the fieldwork app. However, given the distances required to travel in a given day, this was not practical and, as a result, we switched to a different inland control site in the *Grimmered* commune in Gothenburg (Ruddalsvägen 5, 426 68 Västra Frölunda, Sweden). Therefore, we recode *Natrium* to *Grimmered*:
+The inland control site was originally planned to be (*Natrium* building)\[https://www.gu.se/en/study-gothenburg/natrium-a-new-building-on-medicinareberget\]. Therefore, this was built as an option into the fieldwork app. However, given the distances required to travel in a given day, this was not practical and, as a result, we switched to a different inland control site in the *Grimmered* commune in Gothenburg (Ruddalsvägen 5, 426 68 Västra Frölunda, Sweden). Therefore, we recode *Natrium* to *Grimmered*:
 
 ```{r}
 # recode natrium to grimmered
@@ -94,7 +96,45 @@ field_data <-
 head(field_data)
 ```
 
+## Basic data-cleaning
 
+Based on the field notebook, we know that the times and dates were not entered as proper time-date variables. Therefore, these need to be checked and converted. In addition, it's important to note that these times are approximate and, in most cases, are only going to be accurate to the nearest hour.
+
+```{r}
+# check the time variable
+unique(field_data$time)
+```
+
+From this initial look, it's clear that one of the entered times was done using the `h` separator. This needs to be fixed:
+
+```{r}
+# replace the h separator using gsub()
+field_data$time <- gsub(pattern = "h", replacement = ":", x = field_data$time)
+```
+
+We now run a test to make sure that this was fixed:
+
+```{r}
+# check if any time values still have an h
+stopifnot(!any(grepl(pattern = "h", field_data$time)))
+```
+
+In addition, we can check the unique values again to make sure that this h was dealt with:
+
+```{r}
+# check if the h was fixed
+unique(field_data$time)
+```
+
+Convert to dates and times:
+
+Add relevant lat-lon coordinates to these data for each of the sites:
+
+Create flags to identify potentially problematic observations. For example:
+
+1. Fan was not running
+2. Dropped plungers
+3. Foamy buffer
 
 
 
