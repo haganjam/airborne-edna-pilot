@@ -1,0 +1,23 @@
+---
+title: "Field-preparation"
+format: html
+editor: source
+---
+
+This document details the equipment preparation that was done prior to going into the field.
+
+### Bench preparation
+
+The work-bench used to prepare the field equipment was a laminar flow hood. Prior to work in the laminar flow hood, it was cleaned using the following procedure:
+
+1.  2 hours under UV light (minimum)
+2.  Wiped down with 0.5% bleach solution (1:10 v:v dilution of household bleach to water) and left for 10 minutes
+3.  After 10 minutes, the surfaces were again wiped down with Milli-Q water
+4.  The surfaces were finally wiped down with 70% ethanol to help drying
+5.  2 hours under UV light again (minimum)
+
+### Buffer preparation
+
+The airborne eDNA samples along with the water eDNA samples need to be preserved using ATL buffer. Therefore, we prepared 3 ml syringes with 2.5 ml of ATL buffer. These 3 ml syringes were taken to the field and allowed us to, after collecting the water or air sample, easily add the relevant amount of buffer.
+
+
