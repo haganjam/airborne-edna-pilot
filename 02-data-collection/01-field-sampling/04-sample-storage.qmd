@@ -4,23 +4,17 @@ format: html
 editor: source
 ---
 
-## Quarto
+This document describes the conditions under which the samples were stored.
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Overview
 
-## Running Code
+Both the water and air samples collected in the field were preserved immediately in ATL buffer (Qiagen) and placed in a 4 C fridge as soon as possible upon return from the field. Typically, this would be 2-3 hours but was as much as 5 hours in some instances as the travel between some sites was relatively long.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+The samples were then transported by plane to Belgium which means there was a period of around 6 hours that they were outside of the fridge before going back into the fridge. Upon arrival in Belgium, they were kept in a 4 C fridge until they arrived at the lab in Brussels where they were frozen.
 
-```{r}
-1 + 1
-```
+We chose not to freeze them before arrival to avoid the inevitable freeze-thaw cycles during transport.
 
-You can add options to executable code like this
 
-```{r}
-#| echo: false
-2 * 2
-```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+
+

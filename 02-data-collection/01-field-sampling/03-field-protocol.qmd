@@ -4,23 +4,60 @@ format: html
 editor: source
 ---
 
-## Quarto
+The sampling took place at four sites:
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+1. Nya Varvet (Lat: 57.6862350, Lon: 11.8854508)
+2. Saltholmen (Lat: 57.6594212, Lon: 11.8372307)
+3. Vrango (Lat: 57.5742915, Lon: 11.7758066)
+4. Inland control site (Lat: 57.6695114, Lon: 11.9047494, address: Ruddalsvägen 5, 426 68 Västra Frölunda, Sweden)
 
-## Running Code
+At each of these sites (barring the inland control site), we took five water samples and five air samples. At the inland control site, which we set-up to make sure that the air samples were giving us a uniquely coastal signal, we took two air samples.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Cleaning protocol {#sec-cleaning-protocol}
 
-```{r}
-1 + 1
-```
+When the word *clean* is referenced, this refers to an object that was cleaned using 10% commercial bleach clean followed by a rinse with Milli-Q water and, in most cases, time under the UV light (@fig-cleaning-protocol). When we used the word *sterile*, we mean a single-use sterile piece of equipment.
 
-You can add options to executable code like this
+::: {#fig-cleaning-protocol layout-ncol=3}
 
-```{r}
-#| echo: false
-2 * 2
-```
+![Photo-1](photos/methods-sampler-cleaning-1.jpeg)
 
-The `echo: false` option disables the printing of code (only output is displayed).
+![Photo-2](photos/methods-sampler-cleaning-2.jpeg)
+
+![Photo-3](photos/methods-scissor-cleaning-1.jpeg)
+
+Photos of James Hagan cleaning the parts of the air-sampler and the scissors used to cut the filter out of the sampler.
+:::
+
+## Air samples {#sec-air-samples}
+
+To take the air samples, we set-up a DNAir (link) air sampling device at each site. [[The sampling devices consist of a...]]. Initially, these air samplers were loaded with a filter [[]]. A power-bank was then connected to the fan and the air sampler was left for approximately 24 hours. Given the volume of air filtered per minute [[]].
+
+After the *ca.* 24-hour period, we switched off the power-bank to stop the fan. Once the fan was no longer running, we took the water sample (@sec-water-samples). We did this to reduce the chances that the air sample would be affected by the water sampling. We then removed the rain cover on the front of the air sampler and placed it on a clean plastic surface. We then opened a 10 ml sterile syringe, removed the plunger and placed the syringe tube and plunger back into its original plastic bag in preparation for extracting the filter. Next, using clean scissors, we carefully cut the filter out of the air-sampler (@fig-filter). Before the filter was fully detached, we gripped the filter with clean tweezers, cut the filter loose and placed the filter into the 10 ml syringe tube that we had previously prepared. To remove excess air from the filter, we put the plunger back into the syringe tube and compressed the filter. To avoid having to push air through the filter, we again removed the plunger and then used a clean needle to push the compressed filter up to the base of the syringe tube. A Luer-lock was then attached to the end of the syringe and 2.5 ml of ATL buffer was carefully dripped from a 3 ml syringe onto the compressed filter which was now near the top of the syringe tube. We placed the syringe plunger back into the tube (which was now in contact with the compressed filter), removed the Luer-lock and slowly pushed the compressed filter towards the end of the syringe tube. As soon as the ATL buffer started to exit the tip of the syringe, we closed it with a Luer-lock and placed the syringe into a clean plastic bag. This compressed filter with ATL buffer in a Luer-lock sealed 10 ml syringe constitutes a single air sample. The samples were placed in a 4°C fridge as soon as possible when returning from the field.
+
+In addition to the six air samples, we also carried around three filters throughout the field work that were never exposed to the air as negative controls. These were preserved using the same protocol as described above.
+
+::: {#fig-filter-extraction layout-ncol=2}
+
+![Photo-1](photos/methods-filter-extraction-1.jpeg)
+
+![Photo-1](photos/methods-filter-extraction-2.jpeg)
+
+Photos of James Hagan cutting the filter out of the air-sampler using sterilised scissors.
+:::
+
+## Water samples {#sec-water-samples}
+
+In the water directly adjacent to where air sampling devices were placed at each site, we took a water sample. To do this, we observed the movement of the water to identify upstream areas (where the sample will be taken) and downstream areas. We then thoroughly rinsed a clean bucket in the downstream areas. Using this clean, rinsed bucket, we took at least 1 L of water from the identified upstream area. Using the sampled water, we rinsed a 1 L clean beaker thoroughly using the sampled water. We then placed 1 L of the sampled water into the 1 L clean, rinsed beaker. A sterile 100 ml syringe was then used to suck up 100 ml of the sampled water from the 1 L clean, rinsed beaker. We attached a sterile Sterivex filter to this filled 100 ml syringe and slowly pushed the 100 ml of sampled water through the Sterivex filter. We aimed to push the entire 1 L of water through the Sterivex filter and, therefore, repeated this process until 1 L of water had been pushed through the Sterivex. Occasionally, the Sterivex filter became clogged and we were unable to push through the entire 1 L of water. Once 1 L of water had been pushed through the Sterivex (or once the filter was clogged), we removed excess water from the Sterivex filter by shaking it and pushing air through the Sterivex filter using an empty 100 ml syringe. Finally, we added ATL buffer to the Sterivex filter until it the first drop came out. For this, we used a 3 ml syringe that was prepped with 2.5 ml of ATL buffer. Luer-locks were then added to both ends of the Sterivex filter and the Sterivex filter was then placed into a clean plastic bag. As with the air samples, the water samples were placed in a 4°C fridge as soon as possible when returning from the field. 
+
+In addition to these five water samples at each site, we also filtered 1 L of commercial mineral water at each site using the same protocol as a negative control.
+
+## Additional notes
+
+It is important to note that the air samples taken on the first fieldwork day at all three main sites (i.e. Nya Varvet, Saltholmen, Vrango) may not have been preserved properly. This is because we failed to use the needle to push the compresssed filter back to the top of the syringe tube before adding the ATL buffer. This meant that we were pushing significant amounts of air through the compressed filter that had absorbed ATL buffer and, therefore, the buffer foamed considerably. This may have caused poor preservation.
+
+
+
+
+
+
+
