@@ -128,15 +128,39 @@ unique(field_data$time)
 
 Convert to dates and times:
 
+```{r}
+# convert to dates and times
+field_data$time <- 
+  lubridate::ymd_hm(paste(field_data$date, field_data$time, sep = " "), tz = "UTC")
+```
+
 Add relevant lat-lon coordinates to these data for each of the sites:
 
-Create flags to identify potentially problematic observations. For example:
+```{r}
+# add the latitude of the sites
+field_data <-
+  field_data |>
+  dplyr::mutate(lat = dplyr::case_when(
+    site_label == "vr" ~ 57.5742915,
+    site_label == "st" ~ 57.6594212,
+    site_label == "nv" ~ 57.6862350,
+    site_label == "gr" ~ 57.6695114
+  ))
 
-1. Fan was not running
-2. Dropped plungers
-3. Foamy buffer
-4. Preservation method
-5. Field sampling changes
+# add the longitude of the sites
+field_data <-
+  field_data |>
+  dplyr::mutate(lon = dplyr::case_when(
+    site_label == "vr" ~ 11.7758066,
+    site_label == "st" ~ 11.8372307,
+    site_label == "nv" ~ 11.8854508,
+    site_label == "gr" ~ 11.9047494
+  ))
+```
+
+There seems to be a problematic row where, on the 17th of May, we recorded a water sample at Grimmered which is not possible. I think I accidentally filled in the sample as Grimmered when it is in fact Vrango. Both the water and the air samples might have been accidentally set as Vrango but I'll need to double check.
+
+
 
 
 

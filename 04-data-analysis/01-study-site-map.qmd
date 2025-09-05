@@ -1,0 +1,76 @@
+---
+title: "Study site map"
+format: html
+editor: source
+---
+
+Here, we make a simple map of the study sites. I need to go and find this shape-file on my old computer to make this map.
+
+```{r}
+# load the Swedish coastline
+swe_coast <- st_read("data/GIS_layers/Sweden_coast/land_skagerrak_kattegat.shp")
+projection(swe_coast)
+
+# convert to wgs84 coordinate lat lon reference system
+swe_coast <- st_transform(swe_coast, crs = "+proj=longlat +datum=WGS84 +no_defs")
+
+# get a map of just the Tjarno region
+tja_coast <- st_crop(swe_coast, xmin = 11, xmax = 11.3, ymin = 58, ymax = 59)
+plot(tja_coast, col = "white", bg = "white", main = NULL)
+
+```
+
+This map should be exported because that's what we will zoom into:
+
+```{r}
+
+```
+
+We then also want to zoom into the map to show the study sites:
+
+```{r}
+# label data
+label_data <- dplyr::tibble(site = c("VR", "ST", "NV", "GR"),
+                            label_y = c(57.5742915, 57.6594212, 57.6862350, 57.6695114),
+                            label_x = c(11.7758066, 11.8372307, 11.8854508, 11.9047494))
+
+p1 <-
+  ggplot(data = swe_map) +
+  geom_sf() +
+  geom_label(
+    data = label_data,
+    aes(x = label_x, y = label_y, label = site),
+    color = "black",          # Text color
+    fill = "white",           # Background box (outline color)
+    label.size = 0,           # Remove label border stroke
+    label.r = unit(0.1, "lines"),  # Slightly rounded corners
+    size = 1.5,
+    alpha = 0.5# Text size
+  ) +
+  xlab(NULL) +
+  ylab(NULL) +
+  theme_minimal() +
+  #coord_sf(xlim = c(-11.712006, 12.045664), ylim = c(57.553006, 57.721381)) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    legend.title = element_blank()
+  )
+p1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

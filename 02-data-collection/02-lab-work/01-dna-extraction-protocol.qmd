@@ -1,26 +1,26 @@
 ---
 title: "DNA-extraction-protocol"
+bibliography: references.bib
 format: html
 editor: source
 ---
 
-## Quarto
+## Cleaning protocol
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+All extractions were done under a laminar flow hood that was cleaned with 10% bleach, Milli-Q and, finally, wiped down with ethanol.
 
-## Running Code
+## Water samples
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+For the water samples, we followed the following [protocol](https://github.com/genner-lab/Molecular-Lab-Protocols/blob/main/sterivex-dneasy-extraction.md) which is an adaptation of the @spens2017 protocol. In particular, this [video](https://www.youtube.com/watch?v=sLReBIjP-5k) was also very helpful for getting an overview of the protocol.
 
-```{r}
-1 + 1
-```
+## Air samples
 
-You can add options to executable code like this
+Back at the lab, add proteinase K via the female Luer lock at the tip of the syringe and incubate at around 42 C overnight.  
+  
+Once lysed, push out the lysate into fresh tubes. Spin down in the centrifuge and extract 1 mL of the non-pellet solution into fresh tubes for DNA extraction.
 
-```{r}
-#| echo: false
-2 * 2
-```
+For the extraction-negative controls, use buffer ATL and proteinase K (i.e. 1 ml so depending on how much proteinase K is used).
 
-The `echo: false` option disables the printing of code (only output is displayed).
+
+
+

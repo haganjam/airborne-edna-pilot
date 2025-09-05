@@ -1,0 +1,1648 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\usepackage{lineno}
+\usepackage{setspace}
+\linenumbers
+\doublespacing
+\setlength\linenumbersep{12pt}
+\renewcommand\linenumberfont{\normalfont\tiny\sffamily}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\author{}
+\date{}
+
+\begin{document}
+
+
+\textbf{Manuscript type:} Article
+
+\textbf{Title:} Quantifying how biodiversity affects ecosystem
+functioning across space and time in natural marine ecosystems
+
+\textbf{Authors:} James G. Hagan\(^{1, 2, 3}\)*, Benedikt
+Schrofner-Brunner\(^{2, 3}\) and Lars Gamfeldt\(^{2, 3, 4}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Community Ecology Lab, Department of Biology, Vrije Universiteit
+  Brussel (VUB), Pleinlaan 2, 1050 Brussels, Belgium\\
+\item
+  Department of Marine Sciences, University of Gothenburg, Box 461,
+  SE-40530, Gothenburg, Sweden\\
+\item
+  Gothenburg Global Biodiversity Centre, Box 461, SE-40530, Gothenburg,
+  Sweden\\
+\item
+  Centre for Sea and Society, Box 260, SE-40530, Gothenburg, Sweden
+\end{enumerate}
+
+\textbf{Corresponding author:} James G. Hagan (james\_hagan@outlook.com)
+
+\textbf{Data availability:} Raw data for case study 1 are available on
+\href{https://github.com/haganjam/BEF_quant_scale}{Github} and will be
+archived upon publication. Raw data for case study 2 are archived on
+\href{https://researchbox.org/843&PEER_REVIEW_passcode=GLGJFF}{ResearchBox}
+and will be public upon publication.
+
+\textbf{Code availability:} All code used to perform the analysis can be
+found on \href{https://github.com/haganjam/BEF_quant_scale}{Github} and
+will be archived on Zenodo upon publication.
+
+\textbf{Key words:} biodiversity, ecosystem function, scale,
+semi-natural ecosystem, statistical partition
+
+\subsection{Abstract}\label{abstract}
+
+Most empirical work investigating the importance of biodiversity for
+ecosystem functioning has taken place on small spatial and temporal
+scales. Therefore, we need to improve our understanding at larger
+spatial and temporal scales especially if we want biodiversity-ecosystem
+functioning science to be relevant for policy and management. We built a
+methodological pipeline around a rigorously derived statistical
+partition that allowed us to distinguish the various ways in which
+biodiversity can affect functioning in two natural marine ecosystems
+(intertidal rockpool macroalgae and marine fouling communities). This
+partitioning considers both local species interactions and species'
+asynchronous responses to varying environments over space and time. We
+found that a combination of local-scale species interactions,
+local-scale dominance by high functioning species, and spatial niche
+partitioning contributed to a positive effect of biodiversity on
+ecosystem functioning in these ecosystems. Moreover, the importance of
+spatial niche partitioning tended to strengthen with increasing spatial
+environmental heterogeneity. Our approach allowed us to directly
+quantify the complex ways in which biodiversity can affect ecosystem
+functioning and highlights the importance of taking a multi-scale
+perspective in biodiversity-ecosystem functioning research.
+
+\subsection{Introduction}\label{introduction}
+
+Concerns over declines in biodiversity in the 1990s prompted ecologists
+to study how biodiversity loss may affect the functioning of ecosystems
+(deLaplante and Picasso 2011; Frank 2022). Since then, substantial
+experimental work has shown that biodiversity is important for
+sustaining ecosystem functioning (Cardinale et al. 2012; Tilman, Isbell,
+and Cowles 2014). The bulk of these experiments have been performed at
+small spatial scales, and researchers have intentionally worked under
+relatively homogeneous environmental conditions (Qiu and Cardinale 2020;
+Gonzalez et al. 2020; Gamfeldt et al. 2023; Hagan 2024). However,
+environmental heterogeneity, both in space and time, is an important
+mediator of species coexistence (Hart, Usinowicz, and Levine 2017), and
+biodiversity is often changing at multiple scales (McGill et al. 2015).
+Thus, there is a need to improve our understanding of the
+biodiversity-ecosystem functioning relationship at large spatial and
+temporal scales in natural ecosystems (Gonzalez et al. 2020; Isbell et
+al. 2017). This is especially important if we want
+biodiversity-functioning science to be relevant for policy and
+management (Isbell et al. 2017; Le Provost et al. 2023).
+
+At local scales, changes in biodiversity are unambiguously considered to
+affect functioning if mixtures of species have higher (or lower)
+functioning than expected (Petchey 2003). This expectation is based on
+each species' functioning in monoculture (i.e.~without local species
+interactions), and the expected functioning of each species in mixture
+(referred to as expected relative yield, \(RY_E\)). The deviation of a
+mixture from this null expectation is called a net biodiversity effect
+and quantifies the magnitude of the effect of biodiversity on ecosystem
+function (Loreau and Hector 2001). Using a classic statistical partition
+(Loreau and Hector 2001), it was shown that there are at least two sets
+of mechanisms that can lead to net biodiversity effects (but see Fox
+2005). The first is referred to as complementarity. Positive
+complementarity occurs when there is niche partitioning or positive
+interactions among co-occurring species outweigh any negative
+interactions (Cardinale 2011; Williams et al. 2017). The second is
+called selection, which is positive when species with high levels of
+ecosystem function in monoculture dominate functioning in species
+mixtures (Creed et al. 2009; Spaak and De Laender 2021). Understanding
+complementarity and selection is important because their relative
+strength determines how we interpret the way biodiversity affects
+functioning. Specifically, complementarity is maximised when species
+coexist and/or interact positively. This implies that many species are
+required to maintain high levels of ecosystem functioning at a local
+scale. In contrast, selection is maximised when one or a few high
+functioning species dominate functioning, which implies that only one or
+a few species are required to maintain high levels of ecosystem
+functioning.
+
+Experimental work at local scales has shown that complementarity and
+selection are frequently of similar magnitude (Cardinale et al. 2007;
+Cardinale 2011) (but see Hong et al. 2022). Moreover, in experiments,
+the highest functioning species in monoculture often has higher
+functioning than the most diverse mixture of species (Gamfeldt et al.
+2023, 2015; Cardinale 2011), and in many natural systems, a few dominant
+species tend to drive ecosystem functioning (Smith and Knapp 2003; Smith
+et al. 2020; Lisner et al. 2023). Even though local functioning might be
+largely controlled by a few dominant species, this does not mean that
+biodiversity is not important. Rather, if the identity of the dominant
+species varies across space and time, biodiversity may still be
+important at larger scales. This idea has been formalised as the
+insurance hypothesis for the effect of biodiversity on ecosystem
+functioning (reviewed in Loreau et al. 2021). The insurance hypothesis
+states that, when species respond asynchronously to environmental
+variation in space and time and dominate places and times where/when
+they are highest functioning in monoculture, biodiversity increases both
+the magnitude and stability of ecosystem functioning at larger scales
+(Yachi and Loreau 1999; Loreau, Mouquet, and Gonzalez 2003). For
+example, a temporal insurance effect occurs when species respond
+asynchronously to temporal environmental variation and dominate during
+the times when they are highest functioning (Yachi and Loreau 1999).
+
+Attempts to quantify the effects of biodiversity on ecosystem
+functioning at large scales have generally focused on examining whether
+the slope of the relationship between biodiversity and ecosystem
+functioning changes with increasing spatial/temporal extents or grains
+(where extent and grain are defined \emph{sensu} Chase and Knight 2013).
+Theoretical models investigating this have typically found that the
+slope can indeed change with increasing grain (Thompson et al. 2018,
+2021) and extent (Barry et al. 2021). Empirical studies that correlated
+biodiversity with measures of ecosystem functioning at different spatial
+extents and grains in natural systems (Craven et al. 2020; Chisholm et
+al. 2013) reached similar conclusions. One issue with these studies is
+that the change in the slope of the relationship between biodiversity
+and functioning is sensitive to details such as whether functioning is
+averaged or summed within a given spatial unit (Barry et al. 2021), or
+how spatial units are aggregated to increase scale (compare Thompson et
+al. 2018, 2021). The focus on the slope means that neither net
+biodiversity effects nor insurance effects have been directly calculated
+or compared across spatial and temporal scales in natural ecosystems.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{figures/main_fig_1.png}
+
+}
+
+\caption{\label{fig-m1}Overview of the additive statistical partition of
+biodiversity effects across spatial and temporal scales. \textbf{(a)}
+How the net biodiversity effect (NBE) is calculated and additively
+partitioned into total complementarity (TC) and total selection (TS).
+Total selection is then further partitioned into five terms that
+describe how biodiversity can affect function across times and places:
+average selection (AS), temporal insurance (TI), spatial insurance (SI),
+spatio-temporal insurance (ST) and a residual term called non-random
+overyielding (NO). Total insurance (IT) is the sum of AS, TI, SI and ST
+(see Table~\ref{tbl-table-1} for abbreviations). \textbf{(b)}
+Hypothetical examples with two species, two times and two places to give
+an intuition of what these biodiversity effects measure. For example,
+total complementarity quantifies the part of the net biodiversity effect
+that is due to local-scale interactions among species whilst spatial
+insurance quantifies the extent to which species that are high
+functioning in monoculture at a particular place tend to dominate the
+mixtures in those places (see Appendix 1, Table S 1 for ecological
+explanations of the different terms).}
+
+\end{figure}%
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4028}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5972}}@{}}
+\caption{Guide to the symbols used in the equations of the statistical
+partition. Symbols correspond to those used in Figure~\ref{fig-m1}, the
+\emph{Materials and methods} section, and Appendix
+2.}\label{tbl-table-1}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Explanation
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Explanation
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(P, T, S\) & Number of places (\(k\)), times (\(j\)), and species
+(\(i\)) respectively \\
+\(M_{ijk}\) & Monoculture function of species \(i\), at place \(k\) and
+time \(j\) \\
+\(Y_{ijk}\) & Observed function of species \(i\), at place \(k\) and
+time \(j\) in mixture \\
+\(RY_{E,ijk}\) & Expected initial proportion of species \(i\) at place
+\(k\), and time \(j\) in mixture \\
+\(RY_{O,ijk} = \frac{Y_{ijk}}{M_{ijk}}\) & Observed relative yield of
+species \(i\) at place \(k\) and time \(j\) in mixture \\
+\(\Delta RY_{ijk} = RY_{O,ijk} - RY_{E,ijk}\) & Change in relative yield
+of species \(i\) at place \(k\) and time \(j\) in mixture \\
+\(p_{O,ijk}\) & Observed relative functioning of species \(i\), at place
+\(k\) and time \(j\) in mixture \\
+\(\Delta RY_{O,ijk} = RY_{O,ijk} - p_{O,ijk}\) & Change in observed
+relative yield of species \(i\) at place \(k\) and time \(j\) in
+mixture \\
+\(\Delta p_{ijk} = p_{O,ijk} - RY_{E,ijk}\) & Change in relative
+functioning of species \(i\) at place \(k\) and time \(j\) in mixture \\
+\end{longtable}
+
+Recently, an extension of the original complementarity-selection
+statistical partition (Loreau and Hector 2001) was developed (Isbell et
+al. 2018). The extension quantifies a net biodiversity effect in
+different places and times and partitions it into a set of effects that
+describe how biodiversity can affect functioning at local and larger
+scales of space and time (see Figure~\ref{fig-m1} for an overview, and
+Appendix 2 for details). Specifically, total complementarity quantifies
+the average effect of local-scale interactions among coexisting (or
+co-occurring) species on functioning. For example, if total
+complementarity is positive then, on average, interactions between
+individuals of different species reduce functioning less than
+interactions between individuals of the same species
+(Figure~\ref{fig-m1} b). Total selection is divided into non-random
+overyielding and total insurance. Non-random overyielding is a residual
+term describing the tendency for species that are high functioning in
+monoculture to overyield most and is usually negative
+(Figure~\ref{fig-m1} b and Appendix 1, Table S 1 for details). Total
+insurance, when positive, quantifies the extent to which species that
+are high functioning in monoculture tend to dominate mixtures. Dominance
+of species in mixtures that are high functioning in monoculture occurs
+in four ways (Isbell et al. 2018): average selection, spatial insurance,
+temporal insurance and spatio-temporal insurance (Figure~\ref{fig-m1}
+a). For example, average selection quantifies part of the net
+biodiversity effect that is due to a single high functioning species in
+monoculture dominating across all places and times (Figure~\ref{fig-m1}
+b), whilst spatial insurance quantifies the part of the net biodiversity
+effect that is due to different species dominating mixtures in different
+places where they are also high functioning in monoculture
+(Figure~\ref{fig-m1} b). Quantifying these effects allows the estimation
+and comparison of biodiversity effects on ecosystem functioning through
+local-scale interactions, dominance by high functioning species along
+with spatial and temporal niche partitioning at large scales. As a
+result, this statistical partition has clear advantages over approaches
+that examine the slope of the relationship between biodiversity and
+functioning.
+
+Despite its potential, this approach has only been applied in the
+original paper on data from a controlled grassland biodiversity
+experiment (Isbell et al. 2018; Reich et al. 2001) and, more recently,
+in a spatial context (Castillioni and Isbell 2023). Here, we fill this
+gap by directly quantifying the magnitude of the effect of biodiversity
+on ecosystem functioning at large spatial and temporal scales in two
+natural marine ecosystems: intertidal rockpool macroalgae (\emph{case
+study 1}), and marine fouling communities (\emph{case study 2}). For the
+rockpool macroalgae, we created monocultures of four species of
+canopy-forming brown macroalgae and a mixture of all four species, which
+we sampled three times over a six-month period at two rocky shores
+(i.e.~two places) (see Figure~\ref{fig-m2} a and \emph{Materials and
+methods}). The marine fouling study included monocultures and mixtures
+of five marine sessile operational taxonomic units, from nine different
+clusters consisting of three to five places each (39 places in total).
+We sampled the fouling communities three times over six weeks (see
+Figure~\ref{fig-m2} b and \emph{Materials and methods}). In contrast to
+experiments in controlled environments, data from natural systems often
+have incomplete data on species in monoculture and their expected
+relative yields (\(RY_{E}\)s). Our rockpool study had complete data for
+monocultures but lacked information on \(RY_{E}\)s, whereas the fouling
+data had both incomplete monoculture data and no information on
+\(RY_{E}\)s. Therefore, we developed a methodological pipeline that
+combines data imputation techniques for dealing with incomplete
+monoculture data along with uncertainty assumptions for the \(RY_{E}\)s
+(\emph{Materials and methods} and Appendix 3). Using this pipeline and
+applying the partition to two marine ecosystems allowed us to determine
+both the magnitude of the net biodiversity effect and how much of it is
+due to local-scale interactions compared to insurance effects operating
+at larger scales. We show that insurance effects of biodiversity can be
+large and positive and tend to increase when we consider larger spatial
+scales where spatial environmental heterogeneity is higher. In doing so,
+we provide insights into how biodiversity at different spatial and
+temporal scales contributes to ecosystem functioning.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{figures/main_fig_2.png}
+
+}
+
+\caption{\label{fig-m2}Data structure of the marine ecosystems for which
+we quantified the biodiversity effects. \textbf{(a)} The rockpool
+macroalgae dataset (case study 1) consists of two shores (KS --
+Kingsand, CB -- Challaborough) near Plymouth, United Kingdom, for which
+the percentage cover of monocultures (\(M\)) of four species
+(\emph{Bifurcaria bifurcata}, \emph{Fucus serratus}, \emph{Laminaria
+digitata} and \emph{Sargassum muticum}) and a mixture (\(Y\)) of the
+four species were measured three times (\(t_{1-3}\)). \textbf{(b)} The
+marine fouling communities (case study 2) consist of nine clusters
+(cluster F was excluded due to loss of replicates) of between three and
+five sites in the Tjärnö archipelago on the Swedish west coast (39
+places in total). We measured the dry biomass of mixtures at each of the
+39 places on three times (\(t_{1-3}\)). We also gathered 287 direct
+measurements of monoculture dry biomass for the five operational
+taxonomic units across places and times. We used these monoculture
+measurements to impute the remaining 298 required monoculture dry
+biomass measurements (\emph{Materials and methods}).}
+
+\end{figure}%
+
+\subsection{Materials and methods}\label{materials-and-methods}
+
+\subsubsection{Overview of the methodological
+pipeline}\label{overview-of-the-methodological-pipeline}
+
+The statistical partition we used to calculate the different
+biodiversity effects (Figure~\ref{fig-m1} and Appendix 2) was originally
+developed for experimental data (Isbell et al. 2018). This is because
+the partition requires extensive monoculture (i.e.~monoculture data for
+all species in all places and at all times for which mixture data are
+available), which can relatively easily be generated by inoculating
+species into habitat patches in monoculture (Cardinale 2011; Reich et
+al. 2001). In addition, seven of the nine biodiversity effects (net
+biodiversity effect, total selection, total insurance, average
+selection, spatial insurance, temporal insurance and spatio-temporal
+insurance) require knowing species' expected relative yields
+(\(RY_{E}\)s) for all species in all places and at all times (see
+Appendix 3 for an explanation as to why total complementarity and
+non-random overyielding can be calculated without \(RY_{E}\)s). In most
+biodiversity-ecosystem functioning experiments, mixtures of species are
+inoculated with equal initial relative abundance. For example, in a
+two-species mixture at a given place and time, both species would be
+initially inoculated with 0.5 relative abundance. These initial relative
+abundances are then used as the \(RY_{E}\) (Loreau and Hector 2001).
+
+The problem with data from natural systems is that we usually do not
+have monoculture data for all species in all places and at all times.
+Rather, we might have patchy, natural monoculture data (Gamfeldt et al.
+2013; Jochum et al. 2020) or we might be able to collect some
+monoculture data through, for example, species removals (Sears and
+Chesson 2007). Moreover, we do not have \(RY_{E}\)s because we do not
+know the colonisation history that occurred in a given place over time.
+To apply the statistical partition and calculate the different
+biodiversity effects on field data from natural systems requires a
+methodological pipeline that can solve these issues.
+
+Here, we propose such a pipeline. First, to deal with the problem of
+incomplete monoculture data, we use data imputation techniques. If we
+are able to gather enough known monoculture (i.e.~naturally occurring
+monocultures or artificially created monocultures), we can then use
+statistical data imputation methods to obtain a distribution of
+estimates for the required missing monoculture data. Obtaining a
+distribution of estimates for each missing monoculture is especially
+suited to a Bayesian framework which is what we use (see Appendix 4.6
+for a detailed description of our method of monoculture imputation,
+which we applied in our case study on marine fouling communities).
+
+Second, to deal with not knowing the \(RY_{E}\)s, we assume that all
+species are initially present at all times and in all places but that
+the exact \(RY_{E}\)s of each species are unknown. We then assume a set
+of random \(RY_{E}\)s that we draw from a Dirichlet distribution (a
+probability distribution that outputs a simplex i.e.~a set of numbers
+that sum to 1) and calculate the different biodiversity effects. We
+repeat these calculations 100 times with different sets of \(RY_{E}\)s.
+This provides a distribution of possible biodiversity effects, which
+includes the uncertainty from not knowing the true \(RY_{E}\)s in each
+place and at each time (Appendix 3). On simulated data, the Pearson
+correlation coefficient between the true, simulated biodiversity effect
+and the mean of the distribution of biodiversity effects obtained by
+assuming random sets of \(RY_{E}\)s exceeded 0.94 for the seven
+biodiversity effects that are sensitive to \(RY_{E}\)s (Appendix 3,
+Figure S 11). Moreover, the 95\% percentile interval of each estimated
+biodiversity effect (obtained from calculating these effects 100 times
+assuming different RY\_\{E\}s) contained the true, simulated
+biodiversity effect in more than 80\% of the simulations for all
+biodiversity effects except average selection and spatial insurance
+(Appendix 3, Table S 7). But even in those cases, the bias was
+relatively small in comparison to the average size of the effect (see
+Appendix 3 for further analyses). Thus, on simulated data, this
+procedure provides a reliable way to quantify the biodiversity effects
+when \(RY_{E}\)s are unknown.
+
+\subsubsection{Case study 1: Rockpool
+macroalgae}\label{case-study-1-rockpool-macroalgae}
+
+We used our methodological pipeline to apply the statistical partition
+of biodiversity effects to data from two natural marine ecosystems. The
+first is a case study based on a removal experiment where communities of
+four macroalgal species (\emph{Bifurcaria bifurcata} Ross, \emph{Fucus
+serratus} Linnaeus, \emph{Laminaria digitata} (Hudson) Lamouroux, and
+\emph{Sargassum muticum} (Yendo Fensholt) were manipulated in marine
+rockpools near Plymouth, United Kingdom. The four species were chosen
+because they are conspicuous members of the local intertidal flora and
+can dominate the cover in tide pools (Lars Gamfeldt, personal
+observation). The removal was done on two different shores
+(Challaborough, 50° 17' N, 3° 54' W and Kingsand, 50° 20' N, 4° 11' W)
+that were relatively environmentally similar (Lars Gamfeldt, personal
+observation). In June 2007, the rock pools were manually cleared of all
+visible animal and algae biomass. All pools were at the mid-height of
+the shores and ranged in size from approximately 0.2 to 1 m in diameter
+and 0.1 to 0.4 m in depth. We manipulated the presence and absence of
+the four focal species by continuously (monthly throughout the duration
+of the experiment) scraping off the holdfasts of all small germlings of
+the target species. By preventing the establishment of new recruits, we
+created two treatments: \textbf{(i)} monocultures of each focal algal
+species and \textbf{(ii)} a mixture of the four focal species. There
+were between three and four replicate rockpools each monoculture, and
+between six and seven rockpools for the mixture. Treatments were
+randomly assigned to rockpools. The percentage cover of algae in the
+rockpools as a proxy for biomass was estimated three times: March, July
+and September 2008. Algal cover typically correlates strongly with
+biomass (Stachowicz, Whitlatch, and Osman 1999; Bracken et al. 2017) but
+see (Masterson et al. 2008) for counterexamples. At each site and at
+each time, we averaged the total percentage cover across the replicates
+for the mixture and the monoculture rockpools. Thus, we have mixture and
+monoculture data for two places and three times (Figure~\ref{fig-m2} a).
+
+Given that we had complete monoculture data for this case study, we
+simply calculated the different biodiversity effects assuming a set of
+100 random \(RY_{E}\)s drawn from the Dirichlet distribution, which left
+us with a distribution of 100 biodiversity effects for the net
+biodiversity effect, total selection, total insurance, average
+selection, spatial insurance, temporal insurance and spatio-temporal
+insurance (total complementarity and non-random overyielding are
+unaffected by \(RY_{E}\)s, Appendix 3). We parameterised the Dirichlet
+distribution with four \(\alpha\)-values equal to three. Exploratory
+simulations showed that \(\alpha\)-values equal to three provide a good
+spread of possible \(RY_{E}\)s (Appendix 3, Figure S 7). We also
+examined the relationship between monoculture percentage cover and
+relative abundances across times and places. Because the two different
+shores were environmentally similar and the time between measurements
+was only between five and six months, we did not expect strong insurance
+effects of biodiversity in this dataset.
+
+\subsubsection{Case study 2: Marine fouling
+communities}\label{case-study-2-marine-fouling-communities}
+
+The second case study includes data on communities consisting of up to
+five species of marine fouling organisms on settling plates. We created
+mixtures and monocultures with locally occurring marine fouling
+organisms between the 7th of July 2022 and the 5th of September 2022 (60
+days) in the archipelago around Tjärnö (58° 52' 30.0 '' N 11° 08' 42.0
+'' E) on the Swedish west coast (Appendix 4, Figure S 12b). For this, we
+installed 600 PMMA panels (10 x 11 cm, transparent with a removable
+black background) at 50 sites in the archipelago. Each site consisted of
+12 panels mounted on a frame hanging from a buoy at 3 m or 6 m depth
+(Appendix 4, Figure S 12). Of the 12 panels, three were randomly
+assigned as mixture panels and nine were assigned as monoculture panels.
+The three mixture panels correspond to three temporal replicates that we
+sampled destructively at three different times. The 50 sites were
+grouped into 10 clusters to represent different seascapes (Appendix 4,
+Figure S 12a). We made sure that there was at least 40 m between sites
+within a cluster.
+
+When choosing the sites, we aimed to create five environmentally
+heterogeneous and five environmentally homogeneous clusters. We did this
+using \emph{a priori} geographical data (see Appendix 4.2). After the
+experiment, we then directly quantified the level of spatial
+environmental heterogeneity in each cluster by calculating multivariate
+dispersion on 14 z-score standardised environmental variables: turbidity
+(depth of visibility (m), 15 m resolution), relative wave exposure
+(unitless, 15 m resolution) from geographic data (Greeve et al. 2023)
+along with variables that we measured \emph{in situ} during the
+experiment, namely: distance from panel to the seabed (m), panel depth
+(m), the average, coefficient of variation, maximum and minimum
+temperature over the course of the experiment (ºC) and the average,
+coefficient of variation and maximum light level over the course of the
+experiment (lux), salinity (ppt), Secchi depth (m) and water movement
+(mass reduction g hour-1) (see Appendix 4.3 for details). Multivariate
+dispersion was calculated using the betadisper() function from the vegan
+package (Oksanen et al. 2024) in R v4.1.2. We then compared multivariate
+dispersion between clusters originally designated as heterogeneous and
+homogeneous using Welch's two-sample t-test implemented using the
+t.test() function in R v4.1.2. We visualised the variation in
+environmental heterogeneity between clusters using a Principal
+Components Analysis (PCA) based on the same 14 z-score standardised
+environmental variables which we implemented using the prcomp() function
+in R v4.1.2. This analysis showed that there were considerable
+differences in spatial environmental heterogeneity between clusters
+(Appendix 1, Figure S 4).
+
+For the mixture panels, organisms were allowed to settle and were left
+un-manipulated until sampled. For the monoculture panels, we waited
+until an organism had settled and was large enough to be identified and
+then removed all other species. This provided patchy monoculture data
+for different species at different times and different places. The
+organisms were identified to their lowest possible taxonomic resolution.
+Based on these identifications, we designated five operational taxonomic
+units (OTUs): Barn -- the barnacle, \emph{Amphibalanus improvisus}, Bryo
+-- three bryozoa species (\emph{Electra pilosa}, \emph{Membranipora
+membranacea}, \emph{Callopora rylandi}), Asci -- the solitary ascidian,
+\emph{Ascidiella scabra}, Hydro -- two hydrozoan species (\emph{Clytia}
+sp. and \emph{Laomedea flexuosa}), and Ciona -- the solitary ascidian
+\emph{Ciona intestinalis}. We hereafter refer to these taxonomic units
+as OTUs (reference pictures for the OTUs are
+\href{https://researchbox.org/843&PEER_REVIEW_passcode=GLGJFF}{available}).
+
+Monocultures were maintained on days 21, 32 and 42 during the
+experiment, and all panels were photographed before manipulation took
+place (Camera: Sony a6400 with Sony FE 2.8 / 50mm Macro and a
+polarisation filter). We retrieved mixtures and monocultures at three
+different time points (day 34, day 47 and day 60) for measurement in the
+lab. To avoid edge effects and disturbances from attachment holes39, we
+removed the panels' outer margin (1 cm). We photographed each panel on a
+light table (daylight Wafer 3), scraped off the organisms, and weighed
+them to 0.001 g accuracy (scale: Sartorius BP 110). For mixtures, the
+different OTUs were weighed separately. Then, samples were dried at 65
+°C in a drying oven for 48 hours and weighed again to obtain dry
+biomass. Monoculture cover was determined using imageJ2 (Rueden et al.
+2017). We divided monoculture dry biomass by monoculture cover and
+multiplied by the total area of the panel to make the biomass
+measurements comparable to the unmanipulated mixtures (Appendix 4.4). We
+made sure that the panels representing different temporal replicates had
+similar species composition by correlating OTU cover values across
+time-points (Appendix 4.5).
+
+During the experiment we lost 11 sites (including cluster F which we
+removed because only two sites were present at the end of the study)
+leaving us with 39 sites out of the original 50. This left us with data
+for 39 mixtures sampled at three time points (117 datapoints) and 287
+monoculture datapoints. A complete mixture-monoculture dataset for this
+experiment would consist of monocultures of all five OTUs for the 39
+mixtures at all three time points (i.e.~39 sites × 3 time points × 5
+OTUs = 585 monoculture datapoints). We imputed the 298 missing
+monoculture dry biomass values using multilevel generalised linear
+models (GLM) fit in a Bayesian framework. To do this, we fit seven
+multilevel GLMs with the observed monoculture biomass (M) as the
+response variables and different combinations of each OTU's biomass in
+mixture (Y) along with environmental variation quantified using two
+principal components (PC1 and PC2). These two principal components were
+based on a PCA of nine environmental variables that were available at
+all places and times for the mixtures and monocultures, namely: distance
+from panel to the seabed (m), panel depth (m), the average, coefficient
+of variation, maximum and minimum temperature over the course of the
+experiment (ºC) and the average, coefficient of variation and maximum
+light level over the course of the experiment (lux). Together, PC1 and
+PC2 explained 74\% of the variation in the nine environmental variables
+(Appendix 1, Figure S 5). To account for the positive continuous
+distribution of observed monoculture biomass values combined with the
+presence of true zeros (i.e.~place-time combinations where a species had
+zero monoculture biomass), we used a Log-Normal hurdle model. A
+Log-Normal hurdle model is a mixture model where the response variable
+is modelled as zero or non-zero (0-1) using a Bernoulli process
+(i.e.~logistic regression). Then, if the response variable is non-zero,
+it is modelled using a Log-Normal distribution. We present all seven
+models along with an intercept-only null model with priors in the
+supplementary information (Appendix 4.6). The posterior distributions of
+the seven models were estimated using Stan's No-U-Turn Sampler
+Hamiltonian Monte Carlo algorithm (https://mc-stan.org) with four
+separate chains. We implemented this in R v4.1.2 using the rstan package
+(2024). We assessed model convergence by inspecting trace plots, the
+Gelman-Rubin statistic (R-hat values) and effective samples sizes.
+
+The seven models were ranked using the leave-one-out cross validation
+score which we estimated using Pareto Smoothed Importance Sampling
+(PSIS) implemented using the loo() function from the loo package Vehtari
+et al. (2024) in R v4.1.2. The model with the best leave-one-out cross
+validation score (Appendix 1, Table S 3) is presented below (Model 1).
+Both the generalised linear models in Model 1 (i.e.~the Bernoulli model
+and the Log-Normal model) were fit as multilevel models where the
+parameters (i.e.~intercepts and slopes) were fit as correlated random
+effects. Using 1000 samples from the posterior distribution of Model 1
+(below), we imputed the dry biomass of missing monoculture values
+leaving us with 1000 separate estimates of the dry biomass for each
+missing monoculture (see Appendix 4.6 for an analysis of the quality of
+the imputations).
+
+\[
+\begin{aligned}
+w_i &\sim \text{Bernoulli}(p_i) \\
+w_i &= 
+\begin{cases}
+0 & \text{if } M_i = 0 \\
+1 & \text{if } M_i > 0
+\end{cases} \\
+\text{logit}(p_i) &= \theta_{s[i]} + \delta_{1_{s[i]}} Y_i \\
+\theta_j &= \bar{\theta} + \nu_1 \\
+\delta_{1_j} &= \bar{\delta}_1 + \nu_2 \\
+\nu &= \left( \text{diag}(\tau) \times \text{cholesky}(R) \times V^\top \right) \\
+V_{k,j} &\sim \text{Normal}(0, 1) \\
+\bar{\theta}, \bar{\delta}_1 &\sim \text{Normal}(0, 1.5) \\
+\tau_\theta, \tau_\delta &\sim \text{Exponential}(3) \\
+R_{k,k} &\sim \text{LKJcorr}(2) \\
+(M_i \mid w_i = 1) &\sim \text{LogNormal}(u_i, \varepsilon) \\
+u_i &= \alpha_{s[i]} + \beta_{1_{s[i]}} Y_i + \beta_{2_{s[i]}} PC1_i \\
+\alpha_j &= \bar{\alpha} + z_1 \\
+\beta_{1_j} &= \bar{\beta}_1 + z_2 \\
+\beta_{2_j} &= \bar{\beta}_2 + z_3 \\
+z &= \left( \text{diag}(\sigma) \times \text{cholesky}(L) \times Z^\top \right) \\
+\varepsilon &\sim \text{Exponential}(5) \\
+Z_{l,j} &\sim \text{Normal}(0, 1) \\
+\bar{\alpha}, \bar{\beta}_1, \bar{\beta}_2 &\sim \text{Normal}(0, 1) \\
+\sigma_\alpha, \sigma_{\beta_1}, \sigma_{\beta_2} &\sim \text{Exponential}(3) \\
+L_{l,l} &\sim \text{LKJcorr}(2)
+\end{aligned} \tag{Model 1}
+\]
+
+Using all 1000 estimates of monoculture dry biomass for the missing 298
+datapoints and assuming a set of a 100 random \(RY_{E}\)s drawn a from
+the Dirichlet distribution, we calculated the different biodiversity
+effects. For total complementarity and non-random overyielding, we
+obtained 1000 different estimates (reflecting the uncertainty in the
+monoculture imputations). For the net biodiversity effect, total
+selection, total insurance, average selection, spatial insurance,
+temporal insurance and spatio-temporal insurance, we obtained 100 000
+different estimates reflecting the combined uncertainty in the
+monoculture imputations and the \(RY_{E}\)s.
+
+To obtain a pooled mean across the nine clusters for each of the
+biodiversity effects, we used a random-effect meta-analysis model
+(Koricheva, Gurevitch, and Mengersen 2013). For each biodiversity effect
+and each of the nine clusters (i), we calculated the mean and standard
+deviation (s) of the distribution of biodiversity effect estimates.
+Using the mean and standard deviation of each cluster (s), we fit an
+intercept-only random-effects meta-analysis model for each biodiversity
+effect as:
+
+\[
+\begin{aligned}
+\bar{x}_i &\sim \text{Normal}(\theta_i, \sigma) \\
+\sigma^2 &= \frac{s^2}{n} \\
+\theta_i &\sim \text{Normal}(\mu, \tau)
+\end{aligned} \tag{Meta-analysis model}
+\]
+
+Where \(n\) is the number of samples (in this case, 1000 or 100 000),
+\(\theta_i\) is the true mean of the \(i^{th}\)) function from the
+metafor package (Viechtbauer 2010) in R v4.1.2 using restricted maximum
+likelihood. We assessed whether the pooled mean (\(\mu\)), which is the
+model intercept in this case, differed from zero using the Knapp-Hartung
+method which is based on t-tests (Viechtbauer 2010).
+
+Finally, we tested the hypothesis that spatial insurance effects
+strengthen with spatial environmental heterogeneity because responses to
+the environment are species-specific (or, in this case, OTU-specific).
+To do this, we regressed spatial environmental heterogeneity which we
+quantified as the multivariate dispersion of each cluster based on 14
+environmental variables (Appendix 1, Figure S 4) with all 100 000
+estimates of the spatial insurance effect of each cluster. We then
+examined the distribution of 100 000 slope estimates for the effect of
+multivariate dispersion on the spatial insurance effect. The regressions
+were performed using the lm() function in R v4.1.2 which uses ordinary
+least squares.
+
+Unless otherwise stated, all analyses were performed in R v4.1.2.
+Additional packages used were dplyr (Wickham et al. 2023), tidyr
+(Wickham, Vaughan, and Girlich 2024) and readr (Wickham, Hester, and
+Bryan 2024) for data handling, ggplot2 (Wickham 2016), ggpubr
+(Kassambara 2023) and cowplot (Wilke 2024) for data visualisation,
+gtools (Warnes et al. 2023) for the Dirichlet distribution and renv
+(Ushey and Wickham 2024) for package version management.
+
+\subsection{Results}\label{results}
+
+\subsubsection{Case study 1: Rockpool
+macroalgae}\label{case-study-1-rockpool-macroalgae-1}
+
+The net biodiversity effect in the rockpool macroalgae communities was
+large and positive (Mean, Highest Posterior Density Interval
+(\(HPDI_{95\%}\)): 126, \(119 - 136\) \% cover). This indicates that
+going from one to four species increases cover by more than 100\% across
+the three time points and two places, and this effect was dominated by
+total complementarity (Figure~\ref{fig-m3} a). Strong total
+complementarity indicates that, on average, niche partitioning and/or
+positive interspecific interactions have a stronger effect on algal
+cover than intraspecific interactions. This is consistent with the
+mixtures having higher cover than any of the four monocultures across
+all times and places (Appendix 1, Figure S 1a, b).
+
+Total insurance was less than a third of the net biodiversity effect
+(Figure~\ref{fig-m3} a, b). Total insurance was dominated by average
+selection (Figure~\ref{fig-m3} c), but spatial insurance was also
+positive (Figure~\ref{fig-m3} c). The dominance of average selection was
+due to \emph{Sargassum muticum} which had, on average, two to three
+times more cover than the other species in monoculture (Appendix 1,
+Figure S 1a, b). Thus, even though there was positive covariance between
+monoculture functioning and relative abundance for three species
+(\emph{Bifurcaria bifurcata}, \emph{Fucus serratus} and \emph{Laminaria
+digitata}) across space (the signature of spatial insurance, Appendix 1,
+Figure S 1c), \emph{S. muticum} still dominated total insurance. We
+found no evidence for temporal or spatio-temporal insurance
+(Figure~\ref{fig-m3} c, Appendix 1, Figure S 1d).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{figures/main_fig_3_proc.png}
+
+}
+
+\caption{\label{fig-m3}Biodiversity effects on cover (\%) for the
+rockpool macroalgae (case study 1). \textbf{(a)} net biodiversity
+effect, total complementarity (TC) and total selection, \textbf{(b)}
+non-random overyielding (NO) and total insurance, and \textbf{(c)}
+average selection (AS), spatial insurance (SI), temporal insurance (TI)
+and spatio-temporal insurance (ST). Diamonds with error bars represent
+the mean and \(95\%\) highest posterior density interval (\(HPDI\)). In
+addition, 100 random samples (unfilled circles) are also plotted. The
+y-axis scales differ between the three plots, but the red vertical
+dashed line indicates a common point at 30\% for a visual reference.}
+
+\end{figure}%
+
+\subsubsection{Case study 2: Marine fouling
+communities}\label{case-study-2-marine-fouling-communities-1}
+
+The net biodiversity effect ranged from strong and positive (Mean,
+\(HPDI_{95\%}\): 57.5, 50.7 -- 63.3 g) to weak and negative (Mean,
+\(HPDI_{95\%}\): -1.03, \(-2.28 - 0.093\) g) across the nine clusters.
+This indicates that, depending on the cluster, going from one to five
+OTUs could increase biomass by 57.5 g or decrease it by 1.03 g across
+times and places, on average. However, pooled across all clusters, the
+average net biodiversity effect was significantly positive (Mean,
+\(CI_{95\%}\): 24.3, \(10.7 - 38\) g, Appendix 1, Table S 2). As with
+the first case study, the net biodiversity effect was dominated by total
+complementarity, (Figure~\ref{fig-m4} a) and the mixtures frequently had
+higher biomass than any of the monocultures at many times and places
+(Appendix 1, Figure S 2).
+
+Total insurance effects were strong and positive and of similar
+magnitude to total complementarity (Figure~\ref{fig-m4} a, b). Total
+insurance was dominated by average selection (Figure~\ref{fig-m4} c).
+This was due to the high monoculture dry biomass and dominance in
+mixture of the Barn OTU (\emph{Amphibalanus improvisus}), (Appendix 1,
+Figure S 2). Spatial insurance was weaker (Figure~\ref{fig-m4} c) but
+still significantly positive across clusters (pooled mean,
+\(CI_{95\%}\): 1.7, \(0.60 - 2.9\) g, Appendix 1, Table S 2). We did not
+detect temporal nor spatio-temporal insurance effects across clusters
+(Appendix 1, Table S 2).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{figures/main_fig_4_proc.png}
+
+}
+
+\caption{\label{fig-m4}Biodiversity effects on dry biomass (g) for the
+marine fouling communities. \textbf{(a)} net biodiversity effect, total
+complementarity (TC) and total selection, \textbf{(b)} non-random
+overyielding (NO) and total insurance, and \textbf{(c)} average
+selection (AS), spatial insurance (SI), temporal insurance (TI) and
+spatio-temporal insurance (ST). Diamonds with error bars represent the
+pooled mean and 95\% confidence interval for each effect across the nine
+clusters estimated using a random-effect meta-analysis model. Asterisks
+indicate that the pooled mean is significantly different from zero
+(Appendix 1, Table S 2). For each effect and each of the nine clusters,
+the \(95\%\) highest posterior density interval (\(HPDI\), coloured
+lines) for the effect is shown along with 100 random samples (unfilled
+circles) are also plotted. The y-axis scales differ between the three
+plots, but the red vertical dashed line indicates a common point at 30 g
+for a visual reference.}
+
+\end{figure}%
+
+Whilst spatial insurance was weak, there was variation among clusters
+(Figure~\ref{fig-m4} c). We hypothesised that this could be due to
+differences in spatial environmental heterogeneity between clusters if
+OTUs respond differently to spatial environmental variation. We found a
+positive relationship between cluster-level spatial environmental
+heterogeneity and the spatial insurance (Figure~\ref{fig-m5} a). The
+average slope \(\beta\) between spatial environmental heterogeneity and
+the spatial insurance effect was positive across the 100 000 estimates
+of the spatial insurance effect (\(\beta_{mean}\), \(HPDI_{95\%}\):
+0.56, \(0.06 - 1.3\), Figure~\ref{fig-m5} b). However, this was
+influenced by a strong outlier (cluster H) which was the only site that
+had substantial presence of the Ciona OTU at some places (Appendix 1,
+Figure S 2). This led to high spatial insurance effects as the Barn OTU
+(\emph{A. improvisus}) tended to dominate communities in the other
+clusters (Appendix 1, Figure S 2). Redoing the analysis without this
+outlier strengthened the relationship (\(\beta_{mean}\),
+\(HPDI_{95\%}\): 0.93, \(0.35 - 1.6\), Appendix 1, Figure S 3).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{figures/main_fig_5.png}
+
+}
+
+\caption{\label{fig-m5}Spatial insurance increases with spatial
+environmental heterogeneity in the marine fouling communities
+\textbf{(a)} The relationship between spatial environmental
+heterogeneity (quantified for each of the nine clusters using
+multivariate dispersion of 14 environmental variables) and spatial
+insurance (mean and 95\% highest density posterior interval,
+\(HPDI_{95\%}\)) across the nine clusters. Light grey circles are 100
+random samples from the distribution of 100 000 spatial insurance
+estimates for each cluster. The red lines are a sample of the 200 simple
+linear regression lines from a total of 100 000 regression lines (one
+for each of the 100 000 spatial insurance estimates). \textbf{(b)}
+Density plot of the distribution of slope estimates from the 100 000
+simple linear regressions of multivariate dispersion on spatial
+insurance. Red circle with the error bar is the mean and 95\% highest
+density posterior interval.}
+
+\end{figure}%
+
+\subsection{Discussion}\label{discussion}
+
+Our analysis of two natural marine ecosystems allowed us to quantify the
+complex ways in which biodiversity affects ecosystem functioning across
+space and time. In both systems, most of the net biodiversity effect,
+which was positive, was due to two effects. First, total
+complementarity, which quantifies local-scale species interactions.
+Second, average selection, which quantifies the dominance of high
+functioning species across space and time (\emph{Sargassum muticum} and
+\emph{Amphibalanus improvisus} in case studies 1 and 2, respectively).
+This suggests that, in our case studies, processes that allow
+local-scale species coexistence as well as the ability of high
+functioning species to access a wide geographic area are important for
+maintaining ecosystem functioning. In both ecosystems, we found evidence
+that variation in species' responses to the environment in space had a
+positive effect (i.e.~positive spatial insurance). Moreover, in the
+marine fouling system, spatial insurance increased with spatial
+environmental heterogeneity. As a result, dispersal processes that allow
+for species sorting in space may also be an important determinant of
+functioning. Overall, our approach emphasises the importance of taking a
+multi-scale perspective in biodiversity-ecosystem functioning research.
+
+The dominant role of total complementarity and average selection is in
+line with substantial experimental work showing an important role of
+local-scale species interactions and dominance of high functioning
+species (Cardinale et al. 2007; Cardinale et al. 2011; Gamfeldt et al.
+2015). In comparison, the relative weakness of spatial insurance and the
+absence of temporal and spatio-temporal insurance may be explained by
+features of our case studies. First, the rockpool data come from two
+shores that were chosen because they had similar environmental
+conditions (Lars Gamfeldt, personal observation). Moreover, all three
+temporal measurements were taken in the same year, which is short
+considering the multidecadal lifespan of the focal algae species (Aberg
+1992). The situation is similar in the marine fouling communities. While
+we aimed to maximise spatial environmental heterogeneity among the five
+sites within a cluster (\emph{Materials and methods}), this
+spatio-temporal extent of the clusters was only approximately 0.25 km2,
+and the temporal measurements were taken over six weeks. This spatial
+extent is lower than previous studies from the region, which found more
+species turnover than we found (Berntsson and Jonsson 2003). The
+relatively similar environmental conditions across places and times of
+both case studies probably provided limited opportunity for spatial and
+temporal niche partitioning.
+
+Further evidence that the weak spatial and temporal insurance effects
+were due to limited environmental heterogeneity comes from (i) comparing
+spatial environmental heterogeneity and spatial insurance across
+clusters in the marine fouling communities, and (ii) comparing our
+results to the original application of the statistical partition (Isbell
+et al. 2018). First, there was a positive relationship between spatial
+environmental heterogeneity and spatial insurance in the marine fouling
+communities (Fig. 5). This suggests that spatial environmental
+heterogeneity increased spatial niche partitioning and, therefore,
+spatial insurance. Moreover, when removing cluster H which had
+relatively unique environmental conditions compared to the other
+clusters, the effect strengthened (Appendix 1, Figure S 3). Second, in
+the original application of the statistical partition (Isbell et al.
+2018), the authors found weak spatial insurance but strong temporal
+insurance. However, spatial environmental heterogeneity in their
+grassland experiment had only two levels (+/- nitrogen treatment), but
+their data spanned 18 years with a range of different weather conditions
+during that time (e.g.~droughts, anomalously wet years). Taken together,
+this indicates that the magnitude of insurance effects strongly depends
+on the spatial and temporal scales of the data, the environmental
+variation that the data span (Gamfeldt et al. 2023; Loreau et al. 2021;
+Loreau, Mouquet, and Gonzalez 2003).
+
+Our study indicates that insurance effects should continue to strengthen
+as we increase scale and, therefore, environmental heterogeneity in
+space and time. Broadly, this means that the biodiversity-ecosystem
+function field may have failed to quantify much of the positive effect
+of biodiversity on ecosystem functioning because most research has taken
+place on small scales with limited environmental heterogeneity (Qiu and
+Cardinale 2020; Gonzalez et al. 2020). Identifying the appropriate scale
+to evaluate insurance effects, however, requires insight into the focal
+study system. If the scale is too small, there will not be enough
+environmental heterogeneity to allow species to sort in time or space
+(Hart, Usinowicz, and Levine 2017). This was likely the case in our
+rockpool experiment. On the other hand, very large scales with high
+environmental heterogeneity and dispersal limitation will often be
+associated with high turnover in the dominance of species. At these
+scales, concluding that insurance effects are important is, in our
+opinion, trivial. Moreover, it will be difficult, or even untenable, to
+quantify biodiversity effects because the biodiversity partition relies
+heavily on monoculture data (which will then not be available for many
+places and times). Quantifying insurance effects thus requires a match
+between the scale of environmental heterogeneity and the way that
+species respond to that heterogeneity.
+
+In both case studies, total complementarity was strong (Figures 3 and
+4). Thus, species in mixtures, on average, had higher functioning than
+expected based on their functioning in monoculture. In particular,
+functioning in mixture was higher than even the highest functioning
+monocultures at many times and places (Appendix 1, Figures S 1 and S 2).
+There are at least three non-mutually exclusive causes for this. First,
+our case studies took place in natural environments which may have
+higher local-scale environmental heterogeneity than many experimental
+systems that often occur in highly controlled conditions. Second,
+monocultures were created by removing species whilst mixtures were
+undisturbed. This could have inflated the mixture functioning relative
+to the monoculture functioning. We did not directly include controls for
+biomass removal (Stachowicz et al. 2008; Bracken et al. 2017) but
+mitigated this problem by initially removing all algal biomass in the
+intertidal rockpool macroalgae study and by scaling monoculture biomass
+by area covered in the fouling community study (Appendix 4.4, Figure S
+13). Finally, there may simply be strong niche partitioning between
+species in our two systems. Indeed, in an experiment with fouling
+communities on the east coast of the USA, over time, species-rich
+communities occupied the available space on the experimental panels to a
+considerably higher degree compared to communities with only individual
+species (Stachowicz, Whitlatch, and Osman 1999). Species-rich panels had
+higher cover because different species peaked in cover during different
+time periods of the experiment (Stachowicz et al. 2008). Our data,
+however, do not allow us to mechanistically explain the strong total
+complementarity that we observed.
+
+The approach we used to incorporate uncertainty in relative expected
+yields worked well on simulated data (Appendix 3, Figure S 11) and, in
+case study 2, we were able to obtain relatively accurate monoculture
+imputations (Appendix 4.6, Figure S 17 and S 18). We are thus confident
+that we were able to estimate all biodiversity insurance effects, and
+their relative magnitude, with high accuracy for both case studies. Our
+methods provide a promising methodological pipeline for future studies,
+allowing researchers to work with incomplete data from natural systems
+to estimate biodiversity effects at multiple scales of space and time.
+
+The most challenging part of applying our approach to incomplete data
+from natural systems is obtaining sufficient monoculture data. Some
+ecological systems are not as amenable to manipulation as our systems
+were, which means it may not be possible to even obtain patchy
+monoculture data. One option to estimate monoculture functioning when no
+direct monoculture data are available is to use more advanced
+statistical approaches such as the Joint Species Distribution Modelling
+framework (Ovaskainen et al. 2017) or the Diversity-Interactions
+Modelling framework (Connolly et al. 2013). These methods simultaneously
+model all species and their interactions and as a result can, in
+principle, generate monoculture functioning predictions based purely on
+mixture data (as suggested by Isbell et al. 2018). The problem is that
+statistical approaches based only on mixture data will inevitably
+predict beyond the range of the data. However, with mixture data that
+covers a wide range of species compositions (e.g.~many two-species
+mixtures), it may be feasible. Another option is to field-parameterise
+population models as is common in studies of species coexistence (Levine
+and HilleRisLambers 2009). If they are set up so that modelled
+abundances correspond to or can be easily converted to the ecosystem
+function of interest, these models can be used to generate monoculture
+predictions by setting interspecific competition to zero in the
+parameterised model. Generally, these types of models are difficult to
+parameterise, but recent advances using functional traits and species
+abundance data may facilitate this in the future (Chalmandrier et al.
+2021, 2022). These (or other) statistical or theory-driven approaches
+may be the only options if researchers want to calculate these
+biodiversity effects in systems where monocultures cannot be
+artificially created.
+
+\subsubsection{Conclusions}\label{conclusions}
+
+By developing a methodological pipeline built around a rigorously
+derived statistical partition (Isbell et al. 2018), we were able to
+dissect the various ways in which biodiversity can affect ecosystem
+functioning in two natural marine ecosystems at large spatial and
+temporal. This not only showed that biodiversity effects at large scales
+were strong and positive but also provided insights into the mechanisms
+responsible for these positive effects, namely: local-scale species
+interactions, local-scale dominance by high functioning species, and
+spatial niche partitioning all contributed to the positive effect that
+biodiversity had on ecosystem functioning. If, like in many previous
+studies (Thompson et al. 2018, 2021; Chisholm et al. 2013), we would
+have only analysed the slope of the relationship between biodiversity
+and functioning, all we could have concluded is that the slope does, or
+does not, vary with scale, which yields little insight. Overall, our
+results suggest that if we want to fully understand how biodiversity
+affects the functioning of ecosystems at a range of spatial and temporal
+scales, we must move beyond simply correlating biodiversity with
+measures of ecosystem functioning. Our pipeline provides a way of doing
+that.
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+We would like to thank Per Jonsson and Jon Havenhand for help with the
+experimental design and for reviewing initial drafts of the manuscript.
+Per Bergström is thanked for providing access to the GIS data. We would
+like to thank Mael Grosse for help with species identification and
+photography for case study 2. Finally, a special thanks to John Griffin,
+Adam Bates, Matthew McHugh, Patricia Masterson, and volunteers at the
+Marine Biological Association of the UK in Plymouth for help with case
+study 1, and Julia Murata, Elena Schrofner-Brunner, Lara Martins, Pedro
+Victorino de Almeida Dubois de La Patellière and Jesper Hassellöv for
+help collecting the data for case study 2. The project was supported by
+a doctoral studentship from the University of Gothenburg awarded to
+James Hagan and a research grant 2020-03521 from the Swedish Research
+Council VR awarded to Lars Gamfeldt.
+
+\subsection{Author contributions}\label{author-contributions}
+
+JH conceived the idea with input from BSB and LG. JH, BSB and LG
+designed the experiments. LG led the data collection for case study 1,
+and BSB led the data collection for case study 2. JH analysed the data
+with input from BSB. JH wrote the first draft with input from BSB and
+LG. All authors helped revise the manuscript.
+
+\subsection{Conflict of interest
+statement}\label{conflict-of-interest-statement}
+
+We declare no conflicts of interest.
+
+\subsection{Reference list}\label{reference-list}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-aberg1992}
+Aberg, Per. 1992. {``Size-Based Demography of the Seaweed Ascophyllum
+Nodosum in Stochastic Environments.''} \emph{Ecology} 73 (4):
+1488--1501. \url{https://doi.org/10.2307/1940692}.
+
+\bibitem[\citeproctext]{ref-barry2021}
+Barry, Kathryn E., Gabriella A. Pinter, Joseph W. Strini, Karrisa Yang,
+Istvan G. Lauko, Stefan A. Schnitzer, Adam T. Clark, et al. 2021. {``A
+Graphical Null Model for Scaling Biodiversity{\textendash}ecosystem
+Functioning Relationships.''} \emph{Journal of Ecology} 109 (3):
+1549--60. \url{https://doi.org/10.1111/1365-2745.13578}.
+
+\bibitem[\citeproctext]{ref-berntsson2003}
+Berntsson, Kent M, and Per R and Jonsson. 2003. {``Temporal and Spatial
+Patterns in Recruitment and Succession of a Temperate Marine Fouling
+Assemblage: A Comparison of Static Panels and Boat Hulls During the
+Boating Season.''} \emph{Biofouling} 19 (3): 187--95.
+\url{https://doi.org/10.1080/08927014.2003.10382981}.
+
+\bibitem[\citeproctext]{ref-bracken2017}
+Bracken, Matthew E. S., James G. Douglass, Valerie Perini, and Geoffrey
+C. Trussell. 2017. {``Spatial Scale Mediates the Effects of Biodiversity
+on Marine Primary Producers.''} \emph{Ecology} 98 (5): 1434--43.
+\url{https://doi.org/10.1002/ecy.1812}.
+
+\bibitem[\citeproctext]{ref-cardinale2011}
+Cardinale, Bradley J. 2011. {``Biodiversity Improves Water Quality
+Through Niche Partitioning.''} \emph{Nature} 472 (7341): 86--89.
+\url{https://doi.org/10.1038/nature09904}.
+
+\bibitem[\citeproctext]{ref-cardinale2012}
+Cardinale, Bradley J., J. Emmett Duffy, Andrew Gonzalez, David U.
+Hooper, Charles Perrings, Patrick Venail, Anita Narwani, et al. 2012.
+{``Biodiversity Loss and Its Impact on Humanity.''} \emph{Nature} 486
+(7401): 59--67. \url{https://doi.org/10.1038/nature11148}.
+
+\bibitem[\citeproctext]{ref-cardinale2011a}
+Cardinale, Bradley J., Kristin L. Matulich, David U. Hooper, Jarrett E.
+Byrnes, Emmett Duffy, Lars Gamfeldt, Patricia Balvanera, Mary I.
+O'Connor, and Andrew Gonzalez. 2011. {``The Functional Role of Producer
+Diversity in Ecosystems.''} \emph{American Journal of Botany} 98 (3):
+572--92. \url{https://doi.org/10.3732/ajb.1000364}.
+
+\bibitem[\citeproctext]{ref-cardinale2007}
+Cardinale, Bradley J., Justin P. Wright, Marc W. Cadotte, Ian T.
+Carroll, Andy Hector, Diane S. Srivastava, Michel Loreau, and Jerome J.
+Weis. 2007. {``Impacts of Plant Diversity on Biomass Production Increase
+Through Time Because of Species Complementarity.''} \emph{Proceedings of
+the National Academy of Sciences} 104 (46): 18123--28.
+\url{https://doi.org/10.1073/pnas.0709069104}.
+
+\bibitem[\citeproctext]{ref-castillioni2023}
+Castillioni, Karen, and Forest Isbell. 2023. {``Early Positive Spatial
+Selection Effects of Beta-Diversity on Ecosystem Functioning.''}
+\emph{Landscape Ecology} 38 (12): 4483--97.
+\url{https://doi.org/10.1007/s10980-023-01786-9}.
+
+\bibitem[\citeproctext]{ref-chalmandrier2021}
+Chalmandrier, Loïc, Florian Hartig, Daniel C. Laughlin, Heike Lischke,
+Maximilian Pichler, Daniel B. Stouffer, and Loïc Pellissier. 2021.
+{``Linking Functional Traits and Demography to Model Species-Rich
+Communities.''} \emph{Nature Communications} 12 (1): 2724.
+\url{https://doi.org/10.1038/s41467-021-22630-1}.
+
+\bibitem[\citeproctext]{ref-chalmandrier2022}
+Chalmandrier, Loïc, Daniel B. Stouffer, Adam S. T. Purcell, William G.
+Lee, Andrew J. Tanentzap, and Daniel C. Laughlin. 2022. {``Predictions
+of Biodiversity Are Improved by Integrating Trait-Based Competition with
+Abiotic Filtering.''} \emph{Ecology Letters} 25 (5): 1277--89.
+\url{https://doi.org/10.1111/ele.13980}.
+
+\bibitem[\citeproctext]{ref-chase2013}
+Chase, Jonathan M., and Tiffany M. Knight. 2013. {``Scale-Dependent
+Effect Sizes of Ecological Drivers on Biodiversity: Why Standardised
+Sampling Is Not Enough.''} \emph{Ecology Letters} 16 (s1): 17--26.
+\url{https://doi.org/10.1111/ele.12112}.
+
+\bibitem[\citeproctext]{ref-chisholm2013}
+Chisholm, Ryan A., Helene C. Muller-Landau, Kassim Abdul Rahman, Daniel
+P. Bebber, Yue Bin, Stephanie A. Bohlman, Norman A. Bourg, et al. 2013.
+{``Scale-Dependent Relationships Between Tree Species Richness and
+Ecosystem Function in Forests.''} \emph{Journal of Ecology} 101 (5):
+1214--24. \url{https://doi.org/10.1111/1365-2745.12132}.
+
+\bibitem[\citeproctext]{ref-connolly2013}
+Connolly, John, Thomas Bell, Thomas Bolger, Caroline Brophy, Timothee
+Carnus, John A. Finn, Laura Kirwan, et al. 2013. {``An Improved Model to
+Predict the Effects of Changing Biodiversity Levels on Ecosystem
+Function.''} \emph{Journal of Ecology} 101 (2): 344--55.
+\url{https://doi.org/10.1111/1365-2745.12052}.
+
+\bibitem[\citeproctext]{ref-craven2020}
+Craven, Dylan, Masha T. van der Sande, Carsten Meyer, Katharina
+Gerstner, Joanne M. Bennett, Darren P. Giling, Jes Hines, et al. 2020.
+{``A Cross-Scale Assessment of Productivity{\textendash}diversity
+Relationships.''} \emph{Global Ecology and Biogeography} 29 (11):
+1940--55. \url{https://doi.org/10.1111/geb.13165}.
+
+\bibitem[\citeproctext]{ref-creed2009}
+Creed, Robert P., Robert P. Cherry, James R. Pflaum, and Chris J. Wood.
+2009. {``Dominant Species Can Produce a Negative Relationship Between
+Species Diversity and Ecosystem Function.''} \emph{Oikos} 118 (5):
+723--32. \url{https://doi.org/10.1111/j.1600-0706.2008.17212.x}.
+
+\bibitem[\citeproctext]{ref-delaplante2011}
+deLaplante, Kevin, and Valentin Picasso. 2011. {``The
+Biodiversity-Ecosystem Function Debate in Ecology.''} In, edited by
+Kevin deLaplante, Bryson Brown, and Kent A. Peacock, 11:169--200.
+Handbook of the Philosophy of Science. Amsterdam: North-Holland.
+\url{https://doi.org/10.1016/B978-0-444-51673-2.50007-8}.
+
+\bibitem[\citeproctext]{ref-fox2005}
+Fox, Jeremy W. 2005. {``Interpreting the {`}Selection Effect{'} of
+Biodiversity on Ecosystem Function.''} \emph{Ecology Letters} 8 (8):
+846--56. \url{https://doi.org/10.1111/j.1461-0248.2005.00795.x}.
+
+\bibitem[\citeproctext]{ref-frank2022}
+Frank, David M. 2022. {``Science and Values in the
+Biodiversity-Ecosystem Function Debate.''} \emph{Biology \& Philosophy}
+37 (2): 7. \url{https://doi.org/10.1007/s10539-022-09835-4}.
+
+\bibitem[\citeproctext]{ref-gamfeldt2023}
+Gamfeldt, Lars, James G. Hagan, Anne Farewell, Martin Palm, Jonas
+Warringer, and Fabian Roger. 2023. {``Scaling-up the
+Biodiversity{\textendash}ecosystem Functioning Relationship: The Effect
+of Environmental Heterogeneity on Transgressive Overyielding.''}
+\emph{Oikos} 2023 (3): e09652. \url{https://doi.org/10.1111/oik.09652}.
+
+\bibitem[\citeproctext]{ref-gamfeldt2015}
+Gamfeldt, Lars, Jonathan S. Lefcheck, Jarrett E. K. Byrnes, Bradley J.
+Cardinale, J. Emmett Duffy, and John N. Griffin. 2015. {``Marine
+Biodiversity and Ecosystem Functioning: What's Known and What's Next?''}
+\emph{Oikos} 124 (3): 252--65. \url{https://doi.org/10.1111/oik.01549}.
+
+\bibitem[\citeproctext]{ref-gamfeldt2013}
+Gamfeldt, Lars, Tord Snäll, Robert Bagchi, Micael Jonsson, Lena
+Gustafsson, Petter Kjellander, María C. Ruiz-Jaen, et al. 2013.
+{``Higher Levels of Multiple Ecosystem Services Are Found in Forests
+with More Tree Species.''} \emph{Nature Communications} 4 (1): 1340.
+\url{https://doi.org/10.1038/ncomms2328}.
+
+\bibitem[\citeproctext]{ref-gonzalez2020}
+Gonzalez, Andrew, Rachel M. Germain, Diane S. Srivastava, Elise Filotas,
+Laura E. Dee, Dominique Gravel, Patrick L. Thompson, et al. 2020.
+{``Scaling-up Biodiversity-Ecosystem Functioning Research.''}
+\emph{Ecology Letters} 23 (4): 757--76.
+\url{https://doi.org/10.1111/ele.13456}.
+
+\bibitem[\citeproctext]{ref-greeve2023}
+Greeve, Youk, Per Bergström, Åsa Strand, and Mats Lindegarth. 2023.
+{``Estimating and Scaling-up Biomass and Abundance of Epi- and Infaunal
+Bivalves in a Swedish Archipelago Region: Implications for Ecological
+Functions and Ecosystem Services.''} \emph{Frontiers in Marine Science}
+10 (January). \url{https://doi.org/10.3389/fmars.2023.1105999}.
+
+\bibitem[\citeproctext]{ref-hagan2024}
+Hagan, James G. 2024. {``Compensation Alters Estimates of the Number of
+Species Required to Maintain Ecosystem Functioning Across an Emersion
+Gradient: A Case Study with Intertidal Macroalgae.''} \emph{Functional
+Ecology} 38 (2): 338--49. \url{https://doi.org/10.1111/1365-2435.14487}.
+
+\bibitem[\citeproctext]{ref-hart2017}
+Hart, Simon P., Jacob Usinowicz, and Jonathan M. Levine. 2017. {``The
+Spatial Scales of Species Coexistence.''} \emph{Nature Ecology \&
+Evolution} 1 (8): 1066--73.
+\url{https://doi.org/10.1038/s41559-017-0230-7}.
+
+\bibitem[\citeproctext]{ref-hong2022}
+Hong, Pubin, Bernhard Schmid, Frederik De Laender, Nico Eisenhauer,
+Xingwen Zhang, Haozhen Chen, Dylan Craven, et al. 2022. {``Biodiversity
+Promotes Ecosystem Functioning Despite Environmental Change.''}
+\emph{Ecology Letters} 25 (2): 555--69.
+\url{https://doi.org/10.1111/ele.13936}.
+
+\bibitem[\citeproctext]{ref-isbell2018}
+Isbell, Forest, Jane Cowles, Laura E. Dee, Michel Loreau, Peter B.
+Reich, Andrew Gonzalez, Andy Hector, and Bernhard Schmid. 2018.
+{``Quantifying Effects of Biodiversity on Ecosystem Functioning Across
+Times and Places.''} \emph{Ecology Letters} 21 (6): 763--78.
+\url{https://doi.org/10.1111/ele.12928}.
+
+\bibitem[\citeproctext]{ref-isbell2017}
+Isbell, Forest, Andrew Gonzalez, Michel Loreau, Jane Cowles, Sandra
+Díaz, Andy Hector, Georgina M. Mace, et al. 2017. {``Linking the
+Influence and Dependence of People on Biodiversity Across Scales.''}
+\emph{Nature} 546 (7656): 65--72.
+\url{https://doi.org/10.1038/nature22899}.
+
+\bibitem[\citeproctext]{ref-jochum2020}
+Jochum, Malte, Markus Fischer, Forest Isbell, Christiane Roscher, Fons
+van der Plas, Steffen Boch, Gerhard Boenisch, et al. 2020. {``The
+Results of Biodiversity{\textendash}ecosystem Functioning Experiments
+Are Realistic.''} \emph{Nature Ecology \& Evolution} 4 (11): 1485--94.
+\url{https://doi.org/10.1038/s41559-020-1280-9}.
+
+\bibitem[\citeproctext]{ref-ggpubr}
+Kassambara, Alboukadel. 2023. {``Ggpubr: 'Ggplot2' Based Publication
+Ready Plots.''} \url{https://CRAN.R-project.org/package=ggpubr}.
+
+\bibitem[\citeproctext]{ref-koricheva2013}
+Koricheva, Julia, Jessica Gurevitch, and Kerrie Mengersen. 2013.
+\emph{Handbook of Meta-Analysis in Ecology and Evolution}. Princeton
+University Press.
+
+\bibitem[\citeproctext]{ref-leprovost2023}
+Le Provost, Gaëtane, Noëlle V. Schenk, Caterina Penone, Jan Thiele,
+Catrin Westphal, Eric Allan, Manfred Ayasse, et al. 2023. {``The Supply
+of Multiple Ecosystem Services Requires Biodiversity Across Spatial
+Scales.''} \emph{Nature Ecology \& Evolution} 7 (2): 236--49.
+\url{https://doi.org/10.1038/s41559-022-01918-5}.
+
+\bibitem[\citeproctext]{ref-levine2009}
+Levine, Jonathan M., and Janneke HilleRisLambers. 2009. {``The
+Importance of Niches for the Maintenance of Species Diversity.''}
+\emph{Nature} 461 (7261): 254--57.
+\url{https://doi.org/10.1038/nature08251}.
+
+\bibitem[\citeproctext]{ref-lisner2023}
+Lisner, Aleš, Marie Konečná, Petr Blažek, and Jan Lepš. 2023.
+{``Community Biomass Is Driven by Dominants and Their Characteristics
+{\textendash} The Insight from a Field Biodiversity Experiment with
+Realistic Species Loss Scenario.''} \emph{Journal of Ecology} 111 (1):
+240--50. \url{https://doi.org/10.1111/1365-2745.14029}.
+
+\bibitem[\citeproctext]{ref-loreau2021}
+Loreau, Michel, Matthieu Barbier, Elise Filotas, Dominique Gravel,
+Forest Isbell, Steve J. Miller, Jose M. Montoya, et al. 2021.
+{``Biodiversity as Insurance: From Concept to Measurement and
+Application.''} \emph{Biological Reviews} 96 (5): 2333--54.
+\url{https://doi.org/10.1111/brv.12756}.
+
+\bibitem[\citeproctext]{ref-loreau2001}
+Loreau, Michel, and Andy Hector. 2001. {``Partitioning Selection and
+Complementarity in Biodiversity Experiments.''} \emph{Nature} 412
+(6842): 72--76. \url{https://doi.org/10.1038/35083573}.
+
+\bibitem[\citeproctext]{ref-loreau2003}
+Loreau, Michel, Nicolas Mouquet, and Andrew Gonzalez. 2003.
+{``Biodiversity as Spatial Insurance in Heterogeneous Landscapes.''}
+\emph{Proceedings of the National Academy of Sciences} 100 (22):
+12765--70. \url{https://doi.org/10.1073/pnas.2235465100}.
+
+\bibitem[\citeproctext]{ref-masterson2008}
+Masterson, P., F. A. Arenas, R. C. Thompson, and S. R. Jenkins. 2008.
+{``Interaction of Top down and Bottom up Factors in Intertidal
+Rockpools: Effects on Early Successional Macroalgal Community
+Composition, Abundance and Productivity.''} \emph{Journal of
+Experimental Marine Biology and Ecology} 363 (1): 12--20.
+\url{https://doi.org/10.1016/j.jembe.2008.06.001}.
+
+\bibitem[\citeproctext]{ref-mcgill2015}
+McGill, Brian J., Maria Dornelas, Nicholas J. Gotelli, and Anne E.
+Magurran. 2015. {``Fifteen Forms of Biodiversity Trend in the
+Anthropocene.''} \emph{Trends in Ecology \& Evolution} 30 (2): 104--13.
+\url{https://doi.org/10.1016/j.tree.2014.11.006}.
+
+\bibitem[\citeproctext]{ref-vegan}
+Oksanen, Jari, Gavin L. Simpson, F. Guillaume Blanchet, Roeland Kindt,
+Pierre Legendre, Peter R. Minchin, R. B. O'Hara, et al. 2024. {``Vegan:
+Community Ecology Package.''}
+\url{https://CRAN.R-project.org/package=vegan}.
+
+\bibitem[\citeproctext]{ref-ovaskainen2017}
+Ovaskainen, Otso, Gleb Tikhonov, Anna Norberg, F. Guillaume Blanchet,
+Leo Duan, David Dunson, Tomas Roslin, and Nerea Abrego. 2017. {``How to
+Make More Out of Community Data? A Conceptual Framework and Its
+Implementation as Models and Software.''} \emph{Ecology Letters} 20 (5):
+561--76. \url{https://doi.org/10.1111/ele.12757}.
+
+\bibitem[\citeproctext]{ref-petchey2003}
+Petchey, Owen L. 2003. {``Integrating Methods That Investigate How
+Complementarity Influences Ecosystem Functioning.''} \emph{Oikos} 101
+(2): 323--30. \url{https://doi.org/10.1034/j.1600-0706.2003.11828.x}.
+
+\bibitem[\citeproctext]{ref-qiu2020}
+Qiu, Jiangxiao, and Bradley J. Cardinale. 2020. {``Scaling up
+Biodiversity{\textendash}ecosystem Function Relationships Across Space
+and over Time.''} \emph{Ecology} 101 (11): e03166.
+\url{https://doi.org/10.1002/ecy.3166}.
+
+\bibitem[\citeproctext]{ref-reich2001}
+Reich, Peter B., Jean Knops, David Tilman, Joseph Craine, David
+Ellsworth, Mark Tjoelker, Tali Lee, et al. 2001. {``Plant Diversity
+Enhances Ecosystem Responses to Elevated CO2 and Nitrogen Deposition.''}
+\emph{Nature} 410 (6830): 809--10.
+\url{https://doi.org/10.1038/35071062}.
+
+\bibitem[\citeproctext]{ref-rueden2017}
+Rueden, Curtis T., Johannes Schindelin, Mark C. Hiner, Barry E. DeZonia,
+Alison E. Walter, Ellen T. Arena, and Kevin W. Eliceiri. 2017.
+{``ImageJ2: ImageJ for the Next Generation of Scientific Image Data.''}
+\emph{BMC Bioinformatics} 18 (1): 529.
+\url{https://doi.org/10.1186/s12859-017-1934-z}.
+
+\bibitem[\citeproctext]{ref-sears2007}
+Sears, Anna L. W., and Peter Chesson. 2007. {``New Methods for
+Quantifying the Spatial Storage Effect: An Illustration with Desert
+Annuals.''} \emph{Ecology} 88 (9): 2240--47.
+\url{https://doi.org/10.1890/06-0645.1}.
+
+\bibitem[\citeproctext]{ref-smith2003}
+Smith, Melinda D., and Alan K. Knapp. 2003. {``Dominant Species Maintain
+Ecosystem Function with Non-Random Species Loss.''} \emph{Ecology
+Letters} 6 (6): 509--17.
+\url{https://doi.org/10.1046/j.1461-0248.2003.00454.x}.
+
+\bibitem[\citeproctext]{ref-smith2020}
+Smith, Melinda D., Sally E. Koerner, Alan K. Knapp, Meghan L. Avolio,
+Francis A. Chaves, Elsie M. Denton, John Dietrich, et al. 2020. {``Mass
+Ratio Effects Underlie Ecosystem Responses to Environmental Change.''}
+\emph{Journal of Ecology} 108 (3): 855--64.
+\url{https://doi.org/10.1111/1365-2745.13330}.
+
+\bibitem[\citeproctext]{ref-spaak2021}
+Spaak, Jurg Werner, and Frederik De Laender. 2021. {``Effects of Pigment
+Richness and Size Variation on Coexistence, Richness and Function in
+Light-Limited Phytoplankton.''} \emph{Journal of Ecology} 109 (6):
+2385--94. \url{https://doi.org/10.1111/1365-2745.13645}.
+
+\bibitem[\citeproctext]{ref-stachowicz2008}
+Stachowicz, John J., Rebecca J. Best, Matthew E. S. Bracken, and Michael
+H. Graham. 2008. {``Complementarity in Marine Biodiversity
+Manipulations: Reconciling Divergent Evidence from Field and Mesocosm
+Experiments.''} \emph{Proceedings of the National Academy of Sciences}
+105 (48): 18842--47. \url{https://doi.org/10.1073/pnas.0806425105}.
+
+\bibitem[\citeproctext]{ref-stachowicz1999}
+Stachowicz, John J., Robert B. Whitlatch, and Richard W. Osman. 1999.
+{``Species Diversity and Invasion Resistance in a Marine Ecosystem.''}
+\emph{Science} 286 (5444): 1577--79.
+\url{https://doi.org/10.1126/science.286.5444.1577}.
+
+\bibitem[\citeproctext]{ref-rstan}
+Stan Development Team. 2024. {``{\textbraceleft}RStan{\textbraceright}:
+The {\textbraceleft}r{\textbraceright} Interface to
+{\textbraceleft}Stan{\textbraceright}.''} \url{https://mc-stan.org/}.
+
+\bibitem[\citeproctext]{ref-thompson2018}
+Thompson, Patrick L., Forest Isbell, Michel Loreau, Mary I. O'Connor,
+and Andrew Gonzalez. 2018. {``The Strength of the
+Biodiversity{\textendash}ecosystem Function Relationship Depends on
+Spatial Scale.''} \emph{Proceedings of the Royal Society B: Biological
+Sciences} 285 (1880): 20180038.
+\url{https://doi.org/10.1098/rspb.2018.0038}.
+
+\bibitem[\citeproctext]{ref-thompson2021}
+Thompson, Patrick L., Sonia Kéfi, Yuval R. Zelnik, Laura E. Dee,
+Shaopeng Wang, Claire de Mazancourt, Michel Loreau, and Andrew Gonzalez.
+2021. {``Scaling up Biodiversity{\textendash}ecosystem Functioning
+Relationships: The Role of Environmental Heterogeneity in Space and
+Time.''} \emph{Proceedings of the Royal Society B: Biological Sciences}
+288 (1946): 20202779. \url{https://doi.org/10.1098/rspb.2020.2779}.
+
+\bibitem[\citeproctext]{ref-tilman2014}
+Tilman, David, Forest Isbell, and Jane M. Cowles. 2014. {``Biodiversity
+and Ecosystem Functioning.''} \emph{Annual Review of Ecology, Evolution,
+and Systematics} 45 (Volume 45, 2014): 471--93.
+\url{https://doi.org/10.1146/annurev-ecolsys-120213-091917}.
+
+\bibitem[\citeproctext]{ref-renv}
+Ushey, Kevin, and Hadley Wickham. 2024. {``Renv: Project
+Environments.''} \url{https://CRAN.R-project.org/package=renv}.
+
+\bibitem[\citeproctext]{ref-loo}
+Vehtari, Aki, Jonah Gabry, Måns Magnusson, Yuling Yao, Paul-Christian
+Bürkner, Topi Paananen, and Andrew Gelman. 2024. {``Loo: Efficient
+Leave-One-Out Cross-Validation and WAIC for Bayesian Models.''}
+\url{https://mc-stan.org/loo/}.
+
+\bibitem[\citeproctext]{ref-metafor}
+Viechtbauer, Wolfgang. 2010. {``Conducting Meta-Analyses in
+{\textbraceleft}r{\textbraceright} with the
+{\textbraceleft}Metafor{\textbraceright} Package''} 36.
+\url{https://doi.org/10.18637/jss.v036.i03}.
+
+\bibitem[\citeproctext]{ref-gtools}
+Warnes, Gregory R., Ben Bolker, Thomas Lumley, Arni Magnusson, Bill
+Venables, Genei Ryodan, and Steffen Moeller. 2023. {``Gtools: Various r
+Programming Tools.''} \url{https://CRAN.R-project.org/package=gtools}.
+
+\bibitem[\citeproctext]{ref-ggplot2}
+Wickham, Hadley. 2016. {``Ggplot2: Elegant Graphics for Data
+Analysis.''} \url{https://ggplot2.tidyverse.org}.
+
+\bibitem[\citeproctext]{ref-dplyr}
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis
+Vaughan. 2023. {``Dplyr: A Grammar of Data Manipulation.''}
+\url{https://CRAN.R-project.org/package=dplyr}.
+
+\bibitem[\citeproctext]{ref-readr}
+Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2024. {``Readr: Read
+Rectangular Text Data.''}
+\url{https://CRAN.R-project.org/package=readr}.
+
+\bibitem[\citeproctext]{ref-tidyr}
+Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. {``Tidyr:
+Tidy Messy Data.''} \url{https://CRAN.R-project.org/package=tidyr}.
+
+\bibitem[\citeproctext]{ref-cowplot}
+Wilke, Claus O. 2024. {``Cowplot: Streamlined Plot Theme and Plot
+Annotations for 'Ggplot2'.''}
+\url{https://CRAN.R-project.org/package=cowplot}.
+
+\bibitem[\citeproctext]{ref-williams2017}
+Williams, Laura J., Alain Paquette, Jeannine Cavender-Bares, Christian
+Messier, and Peter B. Reich. 2017. {``Spatial Complementarity in Tree
+Crowns Explains Overyielding in Species Mixtures.''} \emph{Nature
+Ecology \& Evolution} 1 (4): 1--7.
+\url{https://doi.org/10.1038/s41559-016-0063}.
+
+\bibitem[\citeproctext]{ref-yachi1999}
+Yachi, Shigeo, and Michel Loreau. 1999. {``Biodiversity and Ecosystem
+Productivity in a Fluctuating Environment: The Insurance Hypothesis.''}
+\emph{Proceedings of the National Academy of Sciences} 96 (4): 1463--68.
+\url{https://doi.org/10.1073/pnas.96.4.1463}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

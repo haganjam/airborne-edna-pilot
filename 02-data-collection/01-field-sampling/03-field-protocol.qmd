@@ -53,7 +53,7 @@ In addition to these five water samples at each site, we also filtered 1 L of co
 
 ## Additional notes
 
-It is important to note that the air samples taken on the first fieldwork day at all three main sites (i.e. Nya Varvet, Saltholmen, Vrango) may not have been preserved properly. This is because we failed to use the needle to push the compresssed filter back to the top of the syringe tube before adding the ATL buffer. This meant that we were pushing significant amounts of air through the compressed filter that had absorbed ATL buffer and, therefore, the buffer foamed considerably. This may have caused poor preservation.
+It is important to note that the air samples taken on the first fieldwork day at all three main sites (i.e. Nya Varvet, Saltholmen, Vrango) may not have been preserved properly. This is because we failed to use the needle to push the compressed filter back to the top of the syringe tube before adding the ATL buffer. This meant that we were pushing significant amounts of air through the compressed filter that had absorbed ATL buffer and, therefore, the buffer foamed considerably. This may have caused poor preservation.
 
 
 

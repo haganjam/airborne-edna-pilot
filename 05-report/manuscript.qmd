@@ -1,0 +1,125 @@
+---
+bibliography: references.bib
+format:
+  pdf:
+    keep-tex: true
+    number-sections: false
+    include-in-header: latex-header.tex
+execute:
+  warning: false
+editor: source
+---
+
+**Manuscript type:** Article
+
+**Title:** Marine invasive species detected from the air
+
+**Authors:** James G. Hagan$^{1, 2}$\*, Fabian Roger$^{3}$, Thomas G. Dahlgren$^{4, 5}$, Lena Granhag$^{6}$, Bjorn Kjällström$^{7}$
+
+1.  Community Ecology Lab, Department of Biology, Vrije Universiteit Brussel (VUB), Brussels, Belgium\
+2.  Gothenburg Global Biodiversity Centre, Gothenburg, Sweden\
+3.  DNAir, Winterthur Switzerland\
+4.  Department of Marine Sciences, University of Gothenburg, Gothenburg, Sweden\
+5.  NORCE Norwegian Research Centre, Bergen, Norway\
+6.  Gothenburg Marine Biological Laboratory, Gothenburg, Sweden\
+7.  Department of Shipping and Marine Technology, Chalmers University of Technology, Gothenburg, Sweden
+
+**Corresponding author:** James G. Hagan (james_hagan\@outlook.com)
+
+**Data availability:** 
+
+**Code availability:** 
+
+**Key words:** airborne eDNA, biodiversity, monitoring, terrestrial, ocean
+
+## Abstract
+
+## Introduction
+
+One of the major breakthroughs in the field of biodiversity monitoring is the discovery that environmental DNA (eDNA), the genetic material left by organisms in their environment, can reveal the presence, absence, and abundance of taxa across the tree of life. This breakthrough has been especially impactful in aquatic ecology and has allowed researchers to monitor aquatic biodiversity through efficient, minimally invasive means, including DNA-metabarcoding of water samples to assess a wide range of taxa and species-specific real-time PCR assays for targeted species detection. **ADD EXAMPLES.** As a result, aquatic eDNA has provided aquatic ecologists with a scalable tool for detecting diverse taxa at large spatial and temporal scales.
+
+More recently, airborne eDNA, genetic material captured directly from the atmosphere, has emerged as a potential tool for biodiversity monitoring. Increasing evidence indicates that air samples can contain DNA fragments from a wide range of taxa and, in some cases, provide information on their relative abundance. These fragments likely originate from diverse biological materials, including skin, hair, bodily fluids, pollen, seeds, and spores. Pioneering zoo-based studies demonstrated that airborne eDNA could detect species both within enclosures and in adjacent areas. Moreover, subsequent field trials have reported partial concordance between taxa identified from air samples and those recorded by established monitoring methods. Together, these results have opened the possibility for airborne eDNA to become a core biomonitoring tool and, as a result, repeat the success of aquatic eDNA.
+
+Interestingly, however, in some of the air-sampling studies, strictly aquatic taxa have also been detected directly from the airborne samples. Given that these aquatic taxa were not the focus of the studies, these detections have typically been treated as alias signals (e.g. from lab or field contamination). However, there are a range of physical processes that could naturally cause DNA from aquatic taxa to enter the air. **This includes aerosolisation, winds etc.**
+
+The following papers have now detected DNA from organisms that are not resident in the sample mediums. Summarise these studies. 
+
+1. Sullivan et al. 2023
+2. Tournaye et al. 2025
+3. Lynggaard et al. 2022
+4. Lynggaard et al. 2023
+5. Klepke et al. 2022
+
+Two recent papers have investigated this issue directly.
+
+We address this issue in a marine system. In marine systems, wave action and onshore winds are common.
+
+We aimed to answer two questions:
+
+**Question 1:** Are detections of aquatic taxa from air samples reflective of true biological transfer via, for example, aerosolisation or are they simply artefacts of contamination? 
+
+To address this question, we collected water and air samples during spring at three coastal sites around Gothenburg, Sweden, that differ in salinity: Nya Varvet (low, brackish), Saltholmen (medium), and Vrångö (high, oceanic). We also sampled at an inland control site located X km from the coast. Using digital PCR (dPCR), we tested these samples for the presence of Round Goby (Neogobius melanostomus). As N. melanostomus typically inhabits low-salinity, brackish environments, we expected detections at Nya Varvet and/or Saltholmen but not at Vrångö. The inland control site served as an additional negative control.
+
+As a further test, we conducted two additional sampling rounds in early and late summer at the three coastal sites. These samples, together with the spring samples, were analyzed using dPCR to detect the invasive comb jelly Mnemiopsis leidyi, which becomes active during the summer. We expected M. leidyi to be detectable in summer samples but absent from spring samples.
+
+With this design, if **(1)** detections of N. melanostomus in spring are consistent between air and water samples, and **(2)** detections of M. leidyi in summer versus spring are also consistent between air and water samples, it would be highly unlikely that positive detections in air are simply due to contamination. Instead, the evidence would support the hypothesis proposed by Ip et al. (2025a, 2025b) that true biological transfer of genetic material occurs from water into air.
+
+
+**Question 2:** Do we detect similar levels of aquatic species diversity using air and water samples?
+
+To address this question, we conducted DNA metabarcoding using MiFish primers (Miya et al. 2015), which specifically target fish, on the air and water samples collected at Nya Varvet, Saltholmen, and Vrångö during spring. We then compared the diversity and community composition of fish detected across air and water samples. If fish diversity and composition are similar between air and water samples, this would indicate that airborne eDNA has strong potential for surveying aquatic biodiversity.
+
+
+## Materials and methods
+
+### Description of the study region
+
+Around Gothenburg blah blah. Describe the species distribution etc.
+
+### Overview of sampling
+
+Sampling took place at four sites in Gothenburg, Sweden: Nya Varvet (NV, Lat: 57.6862350, Lon: 11.8854508), Saltholmen (ST, Lat: 57.6594212, Lon: 11.8372307), Vrango (VR, Lat: 57.5742915, Lon: 11.7758066) and an inland control site (IC, Lat: 57.6695114, Lon: 11.9047494). During the spring (May), at each of these sites (barring the inland control site, IC), we took five water samples and five air samples daily over the course of five days between 13 May and 18 May 2025. At the inland control site, which we set-up to make sure that the air samples were giving us a uniquely coastal signal, we took two air samples: one on 16 May and one on 17 May.
+
+These spring samples were used to... (i.e. question 1)
+
+For question 2, sampling continued throughout the summer and, at each site barring the inland control site, we took an additional water and air-sample on.
+
+
+### Air sampling
+
+To take the air samples, we set-up a DNAir (link) air sampling device at each site. [[The sampling devices consist of a...]]. Initially, these air samplers were loaded with a filter [[]]. A power-bank was then connected to the fan and the air sampler was left for approximately 24 hours. Given the volume of air filtered per minute [[]].
+
+After the *ca.* 24-hour period, we switched off the power-bank to stop the fan. Once the fan had stopped running, we removed the rain cover on the front of the air sampler and placed it on a plastic surface cleaned with 10% commercial bleach and rinsed with Milli-Q water. We then opened a 10 ml sterile syringe, removed the plunger and placed the syringe tube and plunger back into its original plastic bag in preparation for extracting the filter. Next, using scissors and tweezers cleaned with 10% commercial bleach and rinsed with Milli-Q water, we carefully cut the filter out of the air-sampler. Before the filter was fully detached, we gripped the filter with tweezers, cut the filter loose and placed the filter into the 10 ml syringe tube that we had previously prepared. To remove excess air from the filter, we put the plunger back into the syringe tube and compressed the filter. To avoid having to push air through the filter, we again removed the plunger and then used a needle cleaned with 10% bleach and rinsed with Milli-Q water to push the compressed filter up to the base of the syringe tube. A Luer-lock was then attached to the end of the syringe and 2.5 ml of ATL buffer was carefully dripped from a 3 ml syringe onto the compressed filter which was now near the top of the syringe tube. We placed the syringe plunger back into the tube (which was now in contact with the compressed filter), removed the Luer-lock and slowly pushed the compressed filter towards the end of the syringe tube. As soon as the ATL buffer started to exit the tip of the syringe, we closed it with a Luer-lock and placed the syringe into a clean plastic bag. This compressed filter with ATL buffer in a Luer-lock sealed 10 ml syringe constitutes a single air sample. The samples were placed in a 4°C fridge as soon as possible when returning from the field. In addition to the six air samples, we also carried around three filters throughout the field work that were never exposed to the air as negative controls. These were preserved using the same protocol as described above.
+
+### Water sampling
+
+At each site (barring the inland control site, we took a water sample in the water directly adjacent to where the air sampling devices were placed. To do this, we observed the movement of the water to identify upstream areas (where the sample will be taken) and downstream areas. Using a plastic bucket that had been sterilised with 10% commercial bleach and rinsed with Milli-Q water, we thoroughly rinsed the bucket in the downstream area. Using this rinsed bucket, we took at least 1 L of water from the identified upstream area. Using the sampled water, we rinsed a 1 L beaker that was thoroughly sterilised with 10% commercial bleach and rinsed with Milli-Q water. We then placed 1 L of the sampled water into the 1 L rinsed beaker. A sterile 100 ml syringe was then used to suck up 100 ml of the sampled water from the 1 L beaker. We attached a sterile Sterivex filter to this filled 100 ml syringe and slowly pushed the 100 ml of sampled water through the Sterivex filter. We aimed to push the entire 1 L of water through the Sterivex filter and, therefore, repeated this process until 1 L of water had been pushed through the Sterivex. Occasionally, the Sterivex filter became clogged and we were unable to push through the entire 1 L of water. Once 1 L of water had been pushed through the Sterivex (or once the filter was clogged), we removed excess water from the Sterivex filter by shaking it and pushing air through the Sterivex filter using an empty 100 ml syringe. Finally, we added ATL buffer to the Sterivex filter until it the first drop came out. For this, we used a 3 ml syringe that was prepped with 2.5 ml of ATL buffer. Luer-locks were then added to both ends of the Sterivex filter and the Sterivex filter was then placed into a clean plastic bag. As with the air samples, the water samples were placed in a 4°C fridge as soon as possible when returning from the field. In addition to these five water samples at each site, we also filtered 1 L of commercial mineral water at each site using the same protocol as a negative control.
+
+### Sample preservation
+
+The refigerated samples were then transported to the Vrije Universiteit Brussel's DNA labs in the Biology Department for preservation
+
+
+
+## Results
+
+
+
+## Discussion
+
+
+
+## Acknowledgements
+
+
+
+## Author contributions
+
+## Conflict of interest statement
+
+We declare no conflicts of interest.
+
+## Reference list
+
+::: {#refs}
+:::
