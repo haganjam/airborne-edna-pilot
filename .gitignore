@@ -54,3 +54,12 @@ rsconnect/
 edna-pilot-collect/.secrets/
 
 .DS_Store
+
+*.png
+*.svg
+*.key
+
+05-report/figures-tables/keynote-figures.key
+
+
+
